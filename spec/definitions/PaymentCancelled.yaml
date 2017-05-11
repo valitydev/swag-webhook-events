@@ -1,0 +1,11 @@
+description: |
+  Событие об отмене платежа, в результате которого списание денежных средств с
+  плательщика аннулируется
+allOf:
+  - $ref: '#/definitions/Event'
+  - type: object
+    required:
+      - payment
+    properties:
+      payment:
+        $ref: '#/definitions/Payment'

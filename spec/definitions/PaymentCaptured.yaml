@@ -1,0 +1,11 @@
+description: |
+  Событие об успешном завершении платежа, что является подтверждением
+  возникновения денежных обязательств платформы перед вами
+allOf:
+  - $ref: '#/definitions/Event'
+  - type: object
+    required:
+      - payment
+    properties:
+      payment:
+        $ref: '#/definitions/Payment'

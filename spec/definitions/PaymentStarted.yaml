@@ -1,0 +1,9 @@
+description: Событие о запуске платежа в рамках инвойса
+allOf:
+  - $ref: '#/definitions/Event'
+  - type: object
+    required:
+      - payment
+    properties:
+      payment:
+        $ref: '#/definitions/Payment'
