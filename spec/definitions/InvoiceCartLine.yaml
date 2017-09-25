@@ -24,16 +24,19 @@ properties:
     type: integer
     format: int64
     minimum: 1
-  metadata:
-    description: Связанные с позицией метаданные
-    type: object
-    properties:
-      taxMode:
-        description: Ставка налога
-        type: string
-        enum:
-          - 0%
-          - 10%
-          - 18%
-          - 10/110
-          - 18/118
+  cost:
+    description: |
+      Суммарная стоимость позиции с учётом количества единиц товаров или услуг
+    type: integer
+    format: int64
+    minimum: 1
+    readOnly: true
+  taxMode:
+    description: Ставка налога
+    type: string
+    enum:
+      - 0%
+      - 10%
+      - 18%
+      - 10/110
+      - 18/118
