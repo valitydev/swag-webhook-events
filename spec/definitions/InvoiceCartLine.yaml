@@ -31,7 +31,7 @@ properties:
     format: int64
     minimum: 1
     readOnly: true
-  taxMode:
+  taxRate:
     description: Ставка налога
     type: string
     enum:
