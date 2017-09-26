@@ -36,9 +36,11 @@ properties:
     description: Схема налогообложения предлагаемого товара или услуги.
       Указывается, только если предлагаемый товар или услуга облагается налогом.
     type: object
+    required:
+      - rate
     properties:
       rate:
-        description: Ставка налога
+        description: Ставка НДС
         type: string
         enum:
           - 0%
