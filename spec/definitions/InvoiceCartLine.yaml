@@ -4,6 +4,7 @@ required:
   - product
   - quantity
   - price
+  - cost
 properties:
   product:
     description: Описание предлагаемого товара или услуги
@@ -31,12 +32,17 @@ properties:
     format: int64
     minimum: 1
     readOnly: true
-  taxRate:
-    description: Ставка налога
-    type: string
-    enum:
-      - 0%
-      - 10%
-      - 18%
-      - 10/110
-      - 18/118
+  taxMode:
+    description: Схема налогообложения предлагаемого товара или услуги.
+      Указывается, только если предлагаемый товар или услуга облагается налогом.
+    type: object
+    properties:
+      rate:
+        description: Ставка налога
+        type: string
+        enum:
+          - 0%
+          - 10%
+          - 18%
+          - 10/110
+          - 18/118
