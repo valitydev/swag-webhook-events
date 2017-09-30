@@ -1,14 +1,14 @@
 description: Привязка плательщика к платежному средству
 type: object
 allOf:
-  - $ref: '#/definitions/CustomerBindingStatus'
   - type: object
     required:
       - id
-      - paymentToolDetails
+      - paymentResource
     properties:
       id:
         description: Идентификатор привязки
         type: string
-      paymentToolDetails:
-        $ref: '#/definitions/PaymentToolDetails'
+      paymentResource:
+        $ref: '#/definitions/PaymentResource'
+  - $ref: '#/definitions/CustomerBindingStatus'

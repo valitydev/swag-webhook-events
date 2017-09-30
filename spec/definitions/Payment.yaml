@@ -58,16 +58,10 @@ properties:
   paymentSession:
     description: Идентификатор платежной сессии
     type: string
+  paymentToolDetails:
+    $ref: '#/definitions/PaymentToolDetails'
   contactInfo:
-    description: Контактные данные плательщика
-    type: object
-    properties:
-      email:
-        description: Адрес электронной почты
-        type: string
-      phoneNumber:
-        description: Номер мобильного телефона
-        type: string
+    $ref: '#/definitions/ContactInfo'
   ip:
     description: IP-адрес плательщика
     type: string

@@ -2,7 +2,7 @@ description: Данные плательщика
 type: object
 required:
   - id
-  - shopId
+  - shopID
   - status
   - contactInfo
   - metadata
@@ -10,7 +10,7 @@ properties:
   id:
     description: Идентификатор плательщика
     type: string
-  shopId:
+  shopID:
     description: Идентификатор магазина
     type: string
   status:

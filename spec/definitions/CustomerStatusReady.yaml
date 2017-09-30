@@ -1,4 +1,4 @@
-description: Событие об изменении статуса плательщика на "Готов"
+description: Событие о наступлении готовности плательщика к проведению оплаты
 allOf:
   - $ref: '#/definitions/Event'
   - type: object
