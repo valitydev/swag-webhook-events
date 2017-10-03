@@ -36,7 +36,6 @@ properties:
       - PaymentFailed
       - CustomerCreated
       - CustomerDeleted
-      - CustomerStatusUnready
       - CustomerStatusReady
       - CustomerBindingStarted
       - CustomerBindingSucceeded
