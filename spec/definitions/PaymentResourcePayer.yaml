@@ -1,5 +1,5 @@
 type: object
-description: Одноразовое платежное средство
+description: Платежное средство
 allOf:
   - $ref: '#/definitions/Payer'
   - $ref: '#/definitions/PaymentResource'
