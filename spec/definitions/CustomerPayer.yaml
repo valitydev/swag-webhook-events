@@ -1,0 +1,4 @@
+type: object
+allOf:
+  - $ref: '#/definitions/Payer'
+  - $ref: '#/definitions/Customer'

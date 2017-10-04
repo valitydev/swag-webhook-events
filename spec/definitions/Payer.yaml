@@ -1,0 +1,8 @@
+type: object
+discriminator: payerType
+required:
+  - payerType
+properties:
+  payerType:
+    description: Тип платежного средства
+    type: string
