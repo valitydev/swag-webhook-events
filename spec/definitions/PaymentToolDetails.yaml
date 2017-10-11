@@ -8,3 +8,6 @@ properties:
   detailsType:
     description: Тип информации о платежном средстве
     type: string
+    enum:
+      - PaymentToolDetailsBankCard
+      - PaymentToolDetailsPaymentTerminal
