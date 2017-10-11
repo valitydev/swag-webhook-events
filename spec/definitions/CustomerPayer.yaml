@@ -1,4 +1,11 @@
 type: object
 allOf:
   - $ref: '#/definitions/Payer'
-  - $ref: '#/definitions/Customer'
+  - type: object
+    required:
+      - id
+    properties:
+      id:
+        description: Идентификатор плательщика
+        type: string
+
