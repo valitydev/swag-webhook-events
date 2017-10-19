@@ -55,19 +55,19 @@ properties:
     type: string
   paymentToolToken:
     description: >
-      **Deprecated.** _Используйте свойство `payer`_
+      **Deprecated.** _Используйте свойство `payer`._
 
       Токен платежного средства, предоставленного плательщиком
     type: string
   paymentSession:
     description: >
-      **Deprecated.** _Используйте свойство `payer`_
+      **Deprecated.** _Используйте свойство `payer`._
 
       Идентификатор платежной сессии
     type: string
   contactInfo:
     description: >
-      **Deprecated.** _Используйте свойство `payer`_
+      **Deprecated.** _Используйте свойство `payer`._
 
       Контактные данные плательщика
     type: object
@@ -80,13 +80,13 @@ properties:
         type: string
   ip:
     description: >
-      **Deprecated.** _Используйте свойство `payer`_
+      **Deprecated.** _Используйте свойство `payer`._
 
       IP-адрес плательщика
     type: string
   fingerprint:
     description: >
-      **Deprecated.** _Используйте свойство `payer`_
+      **Deprecated.** _Используйте свойство `payer`._
 
       Уникальный отпечаток user agent'а плательщика
     type: string
