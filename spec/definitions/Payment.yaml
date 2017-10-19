@@ -6,6 +6,9 @@ required:
   - status
   - amount
   - currency
+  - paymentToolToken
+  - paymentSession
+  - contactInfo
   - payer
 properties:
   id:
@@ -49,6 +52,29 @@ properties:
     description: |
       Валюта, символьный код согласно
       [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+    type: string
+  paymentToolToken:
+    description: 'Токен платежного средства, предоставленного плательщиком'
+    type: string
+  paymentSession:
+    description: Идентификатор платежной сессии
+    type: string
+  contactInfo:
+    description: Контактные данные плательщика
+    type: object
+    properties:
+      email:
+        description: Адрес электронной почты
+        type: string
+      phoneNumber:
+        description: Номер мобильного телефона
+        type: string
+  ip:
+    description: IP-адрес плательщика
+    type: string
+    deprecated: true
+  fingerprint:
+    description: Уникальный отпечаток user agent'а плательщика
     type: string
   payer:
     $ref: '#/definitions/Payer'
