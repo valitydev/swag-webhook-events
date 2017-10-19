@@ -72,7 +72,6 @@ properties:
   ip:
     description: IP-адрес плательщика
     type: string
-    deprecated: true
   fingerprint:
     description: Уникальный отпечаток user agent'а плательщика
     type: string
