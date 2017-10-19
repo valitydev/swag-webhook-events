@@ -1,0 +1,26 @@
+description: Данные плательщика
+type: object
+required:
+  - id
+  - shopID
+  - status
+  - contactInfo
+  - metadata
+properties:
+  id:
+    description: Идентификатор плательщика
+    type: string
+  shopID:
+    description: Идентификатор магазина
+    type: string
+  status:
+    description: Статус плательщика
+    type: string
+    enum:
+      - ready
+      - unready
+  contactInfo:
+    $ref: '#/definitions/ContactInfo'
+  metadata:
+    description: Связанные с плательщиком метаданные
+    type: object

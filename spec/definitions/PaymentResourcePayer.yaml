@@ -1,0 +1,11 @@
+type: object
+description: Платежное средство
+allOf:
+  - $ref: '#/definitions/Payer'
+  - $ref: '#/definitions/PaymentResource'
+  - type: object
+    required:
+      - contactInfo
+    properties:
+      contactInfo:
+        $ref: '#/definitions/ContactInfo'

@@ -1,0 +1,12 @@
+description: Событие о неуспешной привязке плательщика к платежному средству
+allOf:
+  - $ref: '#/definitions/Event'
+  - type: object
+    required:
+      - customer
+      - binding
+    properties:
+      customer:
+        $ref: '#/definitions/Customer'
+      binding:
+        $ref: '#/definitions/CustomerBinding'
