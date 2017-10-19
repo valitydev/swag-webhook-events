@@ -1,0 +1,9 @@
+description: Событие об удалении плательщика
+allOf:
+  - $ref: '#/definitions/Event'
+  - type: object
+    required:
+      - customer
+    properties:
+      customer:
+        $ref: '#/definitions/Customer'
