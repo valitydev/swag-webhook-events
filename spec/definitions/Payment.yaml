@@ -9,7 +9,6 @@ required:
   - paymentToolToken
   - paymentSession
   - contactInfo
-  - payer
 properties:
   id:
     description: Идентификатор платежа
@@ -54,22 +53,13 @@ properties:
       [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   paymentToolToken:
-    description: >
-      **Deprecated.** _Используйте свойство `payer`._
-
-      Токен платежного средства, предоставленного плательщиком
+    description: 'Токен платежного средства, предоставленного плательщиком'
     type: string
   paymentSession:
-    description: >
-      **Deprecated.** _Используйте свойство `payer`._
-
-      Идентификатор платежной сессии
+    description: Идентификатор платежной сессии
     type: string
   contactInfo:
-    description: >
-      **Deprecated.** _Используйте свойство `payer`._
-
-      Контактные данные плательщика
+    description: Контактные данные плательщика
     type: object
     properties:
       email:
@@ -79,16 +69,8 @@ properties:
         description: Номер мобильного телефона
         type: string
   ip:
-    description: >
-      **Deprecated.** _Используйте свойство `payer`._
-
-      IP-адрес плательщика
+    description: IP-адрес плательщика
     type: string
   fingerprint:
-    description: >
-      **Deprecated.** _Используйте свойство `payer`._
-
-      Уникальный отпечаток user agent'а плательщика
+    description: Уникальный отпечаток user agent'а плательщика
     type: string
-  payer:
-    $ref: '#/definitions/Payer'

@@ -6,6 +6,7 @@ required:
   - occuredAt
   - topic
   - eventType
+  - invoice
 properties:
   eventID:
     description: Идентификатор события в системе
@@ -19,10 +20,9 @@ properties:
     type: string
     enum:
       - InvoicesTopic
-      - CustomersTopic
   eventType:
     type: string
-    description: Тип произошедшего с предметом оповещения события
+    description: Тип произошедшего с инвойсом события
     enum:
       - InvoiceCreated
       - InvoicePaid
@@ -34,9 +34,5 @@ properties:
       - PaymentCancelled
       - PaymentRefunded
       - PaymentFailed
-      - CustomerCreated
-      - CustomerDeleted
-      - CustomerReady
-      - CustomerBindingStarted
-      - CustomerBindingSucceeded
-      - CustomerBindingFailed
+  invoice:
+    $ref: '#/definitions/Invoice'
