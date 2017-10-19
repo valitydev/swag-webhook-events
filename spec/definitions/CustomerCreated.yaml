@@ -1,9 +1,0 @@
-description: Событие о создании нового плательщика
-allOf:
-  - $ref: '#/definitions/Event'
-  - type: object
-    required:
-      - customer
-    properties:
-      customer:
-        $ref: '#/definitions/Customer'
