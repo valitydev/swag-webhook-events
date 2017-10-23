@@ -1,0 +1,14 @@
+description: Статус привязки плательщика к платежному средству
+type: object
+required:
+  - status
+properties:
+  status:
+    description: Статус привязки
+    type: string
+    enum:
+      - created
+      - succeeded
+      - failed
+  error:
+    $ref: '#/definitions/CustomerBindingError'
