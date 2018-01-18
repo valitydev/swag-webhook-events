@@ -11,3 +11,4 @@ properties:
     enum:
       - PaymentToolDetailsBankCard
       - PaymentToolDetailsPaymentTerminal
+      - PaymentToolDetailsDigitalWallet
