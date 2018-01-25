@@ -1,7 +1,6 @@
 type: object
 discriminator: detailsType
 description: Детали платежного средства
-readOnly: true
 required:
   - detailsType
 properties:
@@ -11,3 +10,4 @@ properties:
     enum:
       - PaymentToolDetailsBankCard
       - PaymentToolDetailsPaymentTerminal
+      - PaymentToolDetailsDigitalWallet
