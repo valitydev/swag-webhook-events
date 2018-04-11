@@ -7,6 +7,12 @@ properties:
   code:
     description: Основной код ошибки
     type: string
+  message:
+    description: >
+      **Deprecated.** _Используйте `subError` для детализации описания ошибки._
+
+      Описание ошибки
+    type: string
   subError:
     description: Детализация описания ошибки
     type: object
