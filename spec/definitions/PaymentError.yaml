@@ -3,6 +3,7 @@ description: |
 type: object
 required:
   - code
+  - message
 properties:
   code:
     description: Основной код ошибки
