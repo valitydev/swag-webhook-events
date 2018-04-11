@@ -29,18 +29,7 @@ properties:
       - refunded
       - failed
   error:
-    description: |
-      Описание ошибки, возникшей в процессе проведения платежа, в случае
-      если платёж завершился неуспешно
-    type: object
-    required:
-      - code
-      - message
-    properties:
-      code:
-        type: string
-      message:
-        type: string
+    $ref: '#/definitions/PaymentError'
   amount:
     description: >
       Стоимость предлагаемых товаров или услуг, в минорных денежных единицах,
