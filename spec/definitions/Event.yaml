@@ -34,6 +34,10 @@ properties:
       - PaymentCancelled
       - PaymentRefunded
       - PaymentFailed
+      - RefundCreated
+      - RefundPending
+      - RefundSucceeded
+      - RefundFailed
       - CustomerCreated
       - CustomerDeleted
       - CustomerReady
