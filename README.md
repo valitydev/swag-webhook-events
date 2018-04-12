@@ -18,3 +18,10 @@
 **TIP:** you can open `swagger-editor`, documentation and `swagger-ui` in parallel
 5. Once you finish with the changes you can run tests using: `npm test`
 6. Share you changes with the rest of the world by pushing to GitHub :smile:
+
+### Generate java-client code
+
+1. Install swagger-codegen with brew `brew install swagger-codegen`
+2. Run `npm start`
+3. Use this command 
+`swagger-codegen generate -i http://localhost:5000/swagger.json -l java -o ./java --api-package "com.rbkmoney.swag_webhook_events" --artifact-id "swag-webhook-events" --artifact-version "1.0.2-SNAPSHOT" --group-id "com.rbkmoney" --model-package "com.rbkmoney.swag_webhook_events"`
