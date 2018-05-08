@@ -2,6 +2,9 @@ required:
   - cardNumberMask
   - paymentSystem
 properties:
+  bin:
+    description: БИН карты
+    type: string
   cardNumberMask:
     description: Маскированый номер карты
     type: string
