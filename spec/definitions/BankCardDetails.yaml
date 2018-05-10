@@ -7,6 +7,7 @@ properties:
   bin:
     description: БИН банка-эмитента карты
     type: string
+    pattern: '^\d{6,8}$'
   lastDigits:
     description: Последние цифры номера карты
     type: string
@@ -14,6 +15,7 @@ properties:
   cardNumberMask:
     description: Маскированый номер карты
     type: string
+    pattern: '^\d{6,8}\*+\d{2,4}$'
   paymentSystem:
     description: Платежная система
     type: string
