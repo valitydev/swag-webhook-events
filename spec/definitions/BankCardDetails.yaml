@@ -1,14 +1,19 @@
 required:
+  - bin
+  - lastDigits
   - cardNumberMask
   - paymentSystem
 properties:
   bin:
     description: БИН банка-эмитента карты
     type: string
+  lastDigits:
+    description: Последние цифры номера карты
+    type: string
+    pattern: '^\d{2,4}$'
   cardNumberMask:
     description: Маскированый номер карты
     type: string
-    pattern: '^\d{4}$'
   paymentSystem:
     description: Платежная система
     type: string
