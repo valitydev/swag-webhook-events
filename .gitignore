@@ -36,3 +36,9 @@ node_modules
 .wercker
 
 .idea/
+
+.DS_Store
+package-lock.json
+swagger.json
+
+java/
