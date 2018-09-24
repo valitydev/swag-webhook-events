@@ -6,7 +6,6 @@ required:
   - status
   - amount
   - currency
-  - paymentToolToken
   - paymentSession
   - contactInfo
   - payer
@@ -81,3 +80,5 @@ properties:
     type: string
   payer:
     $ref: '#/definitions/Payer'
+  makeRecurrent:
+    $ref: '#/definitions/PaymentMakeRecurrent'
