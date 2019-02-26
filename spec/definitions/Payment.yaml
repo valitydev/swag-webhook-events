@@ -6,7 +6,6 @@ required:
   - status
   - amount
   - currency
-  - paymentToolToken
   - paymentSession
   - contactInfo
   - payer
