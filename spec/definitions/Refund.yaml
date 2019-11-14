@@ -49,3 +49,7 @@ properties:
   reason:
     description: Причина возврата
     type: string
+  rrn:
+    description: >
+      Уникальный номер транзакции в системе авторизации и расчетов обслуживающего банка
+    type: string
