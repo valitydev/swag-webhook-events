@@ -27,3 +27,17 @@ properties:
       - applepay
       - googlepay
       - samsungpay
+  issuerCountry:
+    description: Страна эмитент (alpha-3 код по стандарту ISO_3166-1)
+    type: string
+    example:
+      - 'RUS'
+      - 'POL'
+      - 'USA'
+  bankName:
+    description: Наименование банка
+    type: string
+    example:
+      - 'SBERBANK OF RUSSIA'
+      - 'JOINT STOCK COMPANY ALFA-BANK'
+      - 'VTB BANK OJSC'
