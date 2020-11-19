@@ -7,3 +7,5 @@ properties:
       - euroset
       - wechat
       - alipay
+      - qps
+      - uzcard
