@@ -1,5 +1,5 @@
 box:
-  id: node:7
+  id: node:16
   username: ${DOCKER_ID}
   password: ${DOCKER_PWD}
 
