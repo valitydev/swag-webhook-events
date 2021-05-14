@@ -10,21 +10,6 @@ var swaggerRepo = require('swagger-repo');
 
 var DIST_DIR = 'web_deploy';
 
-gulp.task('serve', ['build', 'watch', 'edit'], function() {
-  portfinder.getPort({port: 3000}, function (err, port) {
-    gulpConnect.server({
-      root: [DIST_DIR],
-      livereload: true,
-      port: port,
-      middleware: function (gulpConnect, opt) {
-        return [
-          cors()
-        ]
-      }
-    });
-  });
-});
-
 gulp.task('edit', function() {
   portfinder.getPort({port: 5000}, function (err, port) {
     var app = connect();
@@ -41,10 +26,25 @@ gulp.task('build', function (cb) {
   });
 });
 
-gulp.task('reload', ['build'], function () {
+gulp.task('reload', gulp.parallel('build', function () {
   gulp.src(DIST_DIR).pipe(gulpConnect.reload())
-});
+}));
 
 gulp.task('watch', function () {
-  gulp.watch(['spec/**/*', 'web/**/*'], ['reload']);
+  gulp.watch(['spec/**/*', 'web/**/*'], gulp.series(['reload']));
 });
+
+gulp.task('serve', gulp.parallel('build', 'watch', 'edit', function() {
+  portfinder.getPort({port: 3000}, function (err, port) {
+    gulpConnect.server({
+      root: [DIST_DIR],
+      livereload: true,
+      port: port,
+      middleware: function (gulpConnect, opt) {
+        return [
+          cors()
+        ]
+      }
+    });
+  });
+}));
