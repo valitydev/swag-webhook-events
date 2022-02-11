@@ -26,5 +26,5 @@ jobs:
         run: npm run build
       - name: Validate specification
         run: npm run validate
-      - name: Build server jar
-        run: mvn --batch-mode clean package -f pom.xml -P="server"
+      - name: Build client jar
+        run: mvn --batch-mode clean package -f pom.xml -P="client"
