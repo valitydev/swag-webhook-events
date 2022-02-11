@@ -1,0 +1,12 @@
+description: Событие об успешном осуществлении возврата платежа
+allOf:
+  - $ref: '../schemas/Event.yaml'
+  - type: object
+    required:
+      - invoice
+      - payment
+    properties:
+      invoice:
+        $ref: '../schemas/Invoice.yaml'
+      payment:
+        $ref: '../schemas/Payment.yaml'

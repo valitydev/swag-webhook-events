@@ -1,25 +1,15 @@
 {
-  "name": "RBKmoney-openapi-spec",
-  "version": "0.0.1",
-  "dependencies": {
-    "bower": "^1.7.7",
-    "connect": "^3.4.1",
-    "cors": "^2.7.1",
-    "deploy-to-gh-pages": "^1.1.0",
-    "gulp": "^4.0.2",
-    "gulp-connect": "^5.7.0",
-    "gulp-util": "^3.0.8",
-    "npm": "^7.11.2",
-    "portfinder": "^1.0.3",
-    "shelljs": "^0.7.0",
-    "swagger-repo": "^1.0.0",
-    "swagger-ui": "^2.1.4"
-  },
+  "name": "swag-webhook-events",
+  "version": "1.0.0",
   "private": true,
+  "dependencies": {
+    "@redocly/openapi-cli": "^1.0.0-beta.79",
+    "json-merge-patch": "^1.0.2",
+    "redoc-cli": "^0.13.2"
+  },
   "scripts": {
-    "build": "node ./scripts/build.js",
-    "swagger": "swagger-repo",
-    "test": "swagger-repo validate",
-    "start": "gulp serve"
+    "start": "openapi preview-docs",
+    "build": "openapi bundle -o web_deploy/openapi.yaml && openapi bundle -o web_deploy/openapi.json",
+    "validate": "openapi lint"
   }
 }

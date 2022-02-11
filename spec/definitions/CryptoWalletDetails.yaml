@@ -1,5 +1,0 @@
-required:
-  - cryptoCurrency
-properties:
-  cryptoCurrency:
-    $ref: '#/definitions/CryptoCurrency'

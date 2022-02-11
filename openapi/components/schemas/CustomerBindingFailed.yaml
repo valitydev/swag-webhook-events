@@ -1,0 +1,12 @@
+description: Событие о неуспешной привязке плательщика к платежному средству
+allOf:
+  - $ref: '../schemas/Event.yaml'
+  - type: object
+    required:
+      - customer
+      - binding
+    properties:
+      customer:
+        $ref: '../schemas/Customer.yaml'
+      binding:
+        $ref: '../schemas/CustomerBinding.yaml'
