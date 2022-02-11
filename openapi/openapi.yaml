@@ -83,20 +83,6 @@ info:
     Набор атрибутов заголовка и список возможных алгоритмов формирования подписи
     в дальнейшем могут быть расширены.
 
-schemes:
-  - https
-consumes:
-  - application/json; charset=utf-8
-produces:
-  - application/json; charset=utf-8
-parameters:
-  signature:
-    name: Content-Signature
-    in: header
-    description: >
-      Подпись сообщения, сформированная согласно указанным выше правилам
-    required: true
-    type: string
 tags:
   - name: Event Notifications
     x-displayName: Оповещения
