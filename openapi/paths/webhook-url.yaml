@@ -6,7 +6,6 @@ post:
   parameters:
     - $ref: '../components/parameters/signature.yaml'
   requestBody:
-    name: event
     description: Данные произошедшего в платформе события
     required: true
     content:
