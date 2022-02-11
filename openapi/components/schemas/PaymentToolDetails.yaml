@@ -1,0 +1,22 @@
+type: object
+description: Детали платежного средства
+required:
+  - detailsType
+properties:
+  detailsType:
+    description: Тип информации о платежном средстве
+    type: string
+    enum:
+      - PaymentToolDetailsBankCard
+      - PaymentToolDetailsPaymentTerminal
+      - PaymentToolDetailsDigitalWallet
+      - PaymentToolDetailsCryptoWallet
+      - PaymentToolDetailsMobileCommerce
+discriminator:
+  propertyName: detailsType
+  mapping:
+    'PaymentToolDetailsBankCard': '../schemas/PaymentToolDetailsBankCard.yaml'
+    'PaymentToolDetailsPaymentTerminal': '../schemas/PaymentToolDetailsPaymentTerminal.yaml'
+    'PaymentToolDetailsDigitalWallet': '../schemas/PaymentToolDetailsDigitalWallet.yaml'
+    'PaymentToolDetailsCryptoWallet': '../schemas/PaymentToolDetailsCryptoWallet.yaml'
+    'PaymentToolDetailsMobileCommerce': '../schemas/PaymentToolDetailsMobileCommerce.yaml'

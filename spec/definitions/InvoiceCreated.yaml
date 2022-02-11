@@ -1,9 +1,0 @@
-description: Событие о создании нового инвойса
-allOf:
-  - $ref: '#/definitions/Event'
-  - type: object
-    required:
-      - invoice
-    properties:
-      invoice:
-        $ref: '#/definitions/Invoice'

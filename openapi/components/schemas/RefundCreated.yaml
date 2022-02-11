@@ -1,0 +1,15 @@
+description: Событие о запуске рефанда в рамках платежа
+allOf:
+  - $ref: '../schemas/Event.yaml'
+  - type: object
+    required:
+      - invoice
+      - payment
+      - refund
+    properties:
+      invoice:
+        $ref: '../schemas/Invoice.yaml'
+      payment:
+        $ref: '../schemas/Payment.yaml'
+      refund:
+        $ref: '../schemas/Refund.yaml'
