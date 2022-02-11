@@ -20,7 +20,7 @@ properties:
       - ready
       - unready
   contactInfo:
-    $ref: '../schemas/ContactInfo'
+    $ref: '../schemas/ContactInfo.yaml'
   metadata:
     description: Связанные с плательщиком метаданные
     type: object

@@ -4,7 +4,7 @@ post:
   summary: Оповестить о событии
   operationId: notifyWebhookEvent
   parameters:
-    - $ref: '#/parameters/signature'
+    - $ref: '../parameters/signature.yaml'
   requestBody:
     name: event
     description: Данные произошедшего в платформе события
