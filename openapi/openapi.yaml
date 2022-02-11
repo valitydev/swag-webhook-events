@@ -82,7 +82,8 @@ info:
 
     Набор атрибутов заголовка и список возможных алгоритмов формирования подписи
     в дальнейшем могут быть расширены.
-
+servers:
+  - url: 'https://merchant.site/'
 tags:
   - name: Event Notifications
     x-displayName: Оповещения
