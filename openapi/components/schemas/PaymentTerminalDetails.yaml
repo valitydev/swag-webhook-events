@@ -1,5 +1,6 @@
 required:
   - provider
+  - providerName
 properties:
   provider:
     type: string
@@ -9,3 +10,7 @@ properties:
       - alipay
       - qps
       - uzcard
+      - unknown
+    deprecated: true
+  providerName:
+    type: string

@@ -28,6 +28,11 @@ properties:
       - googlepay
       - samsungpay
       - yandexpay
+      - unknown
+    deprecated: true
+  tokenProviderName:
+    description: Провайдер платежных токенов
+    type: string
   issuerCountry:
     description: Страна эмитент (alpha-3 код по стандарту ISO_3166-1)
     type: string

@@ -3,3 +3,5 @@ required:
 properties:
   cryptoCurrency:
     $ref: '../schemas/CryptoCurrency.yaml'
+  cryptoCurrencyType:
+    $ref: '../schemas/CryptoCurrencyType.yaml'
