@@ -7,3 +7,5 @@ enum:
   - ripple
   - ethereum
   - zcash
+  - unknown
+deprecated: true
