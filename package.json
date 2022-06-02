@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@redocly/openapi-cli": "1.0.0-beta.81",
+    "@redocly/openapi-cli": "1.0.0-beta.94",
     "json-merge-patch": "1.0.2",
-    "redoc-cli": "0.13.7"
+    "redoc-cli": "0.13.16"
   },
   "scripts": {
     "start": "openapi preview-docs",
