@@ -11,7 +11,7 @@ properties:
     description: Идентификатор рефанда
     type: string
   createdAt:
-    description: Дата и время создания
+    description: Date and time of creation
     type: string
     format: date-time
   status:
@@ -46,7 +46,7 @@ properties:
       [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   reason:
-    description: Причина возврата
+    description: Refund reason
     type: string
   rrn:
     description: >
