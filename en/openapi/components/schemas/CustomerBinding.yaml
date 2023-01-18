@@ -1,0 +1,16 @@
+description: Привязка плательщика к платежному средству
+type: object
+allOf:
+  - 
+    $ref: '../schemas/CustomerBindingStatus.yaml'
+  - 
+    type: object
+    required:
+      - id
+      - paymentResource
+    properties:
+      id:
+        description: Идентификатор привязки
+        type: string
+      paymentResource:
+        $ref: '../schemas/PaymentResource.yaml'
