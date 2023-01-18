@@ -8,6 +8,6 @@ allOf:
       - customerID
     properties:
       customerID:
-        description: Идентификатор плательщика
+        description: Customer ID
         type: string
 
