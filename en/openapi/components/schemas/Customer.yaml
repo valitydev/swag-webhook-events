@@ -8,10 +8,10 @@ required:
   - metadata
 properties:
   id:
-    description: Идентификатор плательщика
+    description: Customer ID
     type: string
   shopID:
-    description: Идентификатор магазина
+    description: Shop ID
     type: string
   status:
     description: Статус плательщика
