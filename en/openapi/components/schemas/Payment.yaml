@@ -11,14 +11,14 @@ required:
   - payer
 properties:
   id:
-    description: Идентификатор платежа
+    description: Payment ID
     type: string
   createdAt:
-    description: Дата и время создания
+    description: Date and time of creation
     type: string
     format: date-time
   status:
-    description: Статус платежа
+    description: Payment status
     type: string
     enum:
       - pending
@@ -60,10 +60,10 @@ properties:
     type: object
     properties:
       email:
-        description: Адрес электронной почты
+        description: Email address
         type: string
       phoneNumber:
-        description: Номер мобильного телефона
+        description: Phone number
         type: string
   ip:
     description: >
