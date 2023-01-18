@@ -7,7 +7,7 @@ required:
   - cost
 properties:
   product:
-    description: Описание предлагаемого товара или услуги
+    description: Description of the goods or services offered
     type: string
     maxLength: 1000
   quantity:
