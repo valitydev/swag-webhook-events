@@ -1,0 +1,11 @@
+description: Событие о создании нового инвойса
+allOf:
+  - 
+    $ref: '../schemas/Event.yaml'
+  - 
+    type: object
+    required:
+      - invoice
+    properties:
+      invoice:
+        $ref: '../schemas/Invoice.yaml'
