@@ -5,11 +5,11 @@ required:
   - paymentSystem
 properties:
   bin:
-    description: БИН банка-эмитента карты
+    description: Card issuing bank BIN
     type: string
     pattern: '^\d{6,8}$'
   lastDigits:
-    description: Последние цифры номера карты
+    description: Card last digits
     type: string
     pattern: '^\d{2,4}$'
   cardNumberMask:
@@ -17,11 +17,11 @@ properties:
     type: string
     pattern: '^\d{6,8}\*+\d{2,4}$'
   paymentSystem:
-    description: Платежная система
+    description: Payment system
     type: string
     maxLength: 100
   tokenProvider:
-    description: Провайдер платежных токенов
+    description: Payment token provider
     type: string
     enum:
       - applepay
@@ -31,7 +31,7 @@ properties:
       - unknown
     deprecated: true
   tokenProviderName:
-    description: Провайдер платежных токенов
+    description: Payment token provider
     type: string
   issuerCountry:
     description: Страна эмитент (alpha-3 код по стандарту ISO_3166-1)
@@ -41,7 +41,7 @@ properties:
       - 'POL'
       - 'USA'
   bankName:
-    description: Наименование банка
+    description: Bank name
     type: string
     example:
       - 'SBERBANK OF RUSSIA'
