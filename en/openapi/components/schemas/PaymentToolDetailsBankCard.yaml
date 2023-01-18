@@ -1,0 +1,6 @@
+type: object
+allOf:
+  - 
+    $ref: '../schemas/PaymentToolDetails.yaml'
+  - 
+    $ref: '../schemas/BankCardDetails.yaml'
