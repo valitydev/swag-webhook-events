@@ -12,18 +12,18 @@ required:
   - product
 properties:
   id:
-    description: Идентификатор инвойса
+    description: Invoice ID
     type: string
   shopID:
-    description: Идентификатор магазина
+    description: Shop ID
     type: string
     format: string
   createdAt:
-    description: Дата и время создания
+    description: Date and time of creation
     type: string
     format: date-time
   status:
-    description: Статус инвойса
+    description: Invoice status
     type: string
     enum:
       - unpaid
@@ -32,7 +32,7 @@ properties:
       - refunded
       - fulfilled
   reason:
-    description: Причина отмены или погашения инвойса
+    description: Reason for invoice cancellation or redemption
     type: string
   dueDate:
     description: Дата и время истечения срока жизни
@@ -54,10 +54,10 @@ properties:
     description: Связанные с инвойсом метаданные
     type: object
   product:
-    description: Наименование предлагаемых товаров или услуг
+    description: Name of the offered goods or services
     type: string
   description:
-    description: Описание предлагаемых товаров или услуг
+    description: Description of the goods or services offered
     type: string
   cart:
     description: |
