@@ -1,0 +1,11 @@
+description: Событие о наступлении готовности плательщика к проведению оплаты
+allOf:
+  - 
+    $ref: '../schemas/Event.yaml'
+  - 
+    type: object
+    required:
+      - customer
+    properties:
+      customer:
+        $ref: '../schemas/Customer.yaml'
