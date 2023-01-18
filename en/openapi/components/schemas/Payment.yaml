@@ -1,0 +1,88 @@
+description: Данные платежа в рамках инвойса
+type: object
+required:
+  - id
+  - createdAt
+  - status
+  - amount
+  - currency
+  - paymentSession
+  - contactInfo
+  - payer
+properties:
+  id:
+    description: Идентификатор платежа
+    type: string
+  createdAt:
+    description: Дата и время создания
+    type: string
+    format: date-time
+  status:
+    description: Статус платежа
+    type: string
+    enum:
+      - pending
+      - processed
+      - captured
+      - cancelled
+      - refunded
+      - failed
+  error:
+    $ref: '../schemas/PaymentError.yaml'
+  amount:
+    description: >
+      Стоимость предлагаемых товаров или услуг, в минорных денежных единицах, например в копейках в случае указания российских рублей в качестве валюты.
+    type: integer
+    format: int64
+    minimum: 1
+  currency:
+    description: |
+      Валюта, символьный код согласно
+      [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+    type: string
+  metadata:
+    description: Связанные с платежом метаданные
+    type: object
+  paymentToolToken:
+    description: >
+      **Deprecated.** _Используйте свойство `payer`._
+      Токен платежного средства, предоставленного плательщиком
+    type: string
+  paymentSession:
+    description: >
+      **Deprecated.** _Используйте свойство `payer`._
+      Идентификатор платежной сессии
+    type: string
+  contactInfo:
+    description: >
+      **Deprecated.** _Используйте свойство `payer`._
+      Контактные данные плательщика
+    type: object
+    properties:
+      email:
+        description: Адрес электронной почты
+        type: string
+      phoneNumber:
+        description: Номер мобильного телефона
+        type: string
+  ip:
+    description: >
+      **Deprecated.** _Используйте свойство `payer`._
+      IP-адрес плательщика
+    type: string
+  fingerprint:
+    description: >
+      **Deprecated.** _Используйте свойство `payer`._
+      Уникальный отпечаток user agent'а плательщика
+    type: string
+  payer:
+    $ref: '../schemas/Payer.yaml'
+  fee:
+    description: >
+      Комиссия системы, в минорных денежных единицах.
+    type: integer
+    format: int64
+  rrn:
+    description: >
+      Уникальный номер транзакции в системе авторизации и расчетов обслуживающего банка
+    type: string
