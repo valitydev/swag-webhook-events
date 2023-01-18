@@ -4,7 +4,7 @@ required:
   - fingerprint
 properties:
   ip:
-    description: IP-адрес плательщика
+    description: Payer IP-address
     type: string
     format: ip-address
     maxLength: 45
