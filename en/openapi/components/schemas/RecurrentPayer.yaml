@@ -1,0 +1,15 @@
+type: object
+description: Многоразовое платежное средство на основе другого платежа
+allOf:
+  - 
+    $ref: '../schemas/Payer.yaml'
+  - 
+    type: object
+    required:
+      - contactInfo
+      - recurrentParentPayment
+    properties:
+      contactInfo:
+        $ref: '../schemas/ContactInfo.yaml'
+      recurrentParentPayment:
+        $ref: '../schemas/PaymentRecurrentParent.yaml'
