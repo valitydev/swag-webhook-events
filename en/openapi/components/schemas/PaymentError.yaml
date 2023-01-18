@@ -6,7 +6,7 @@ required:
   - message
 properties:
   code:
-    description: Основной код ошибки
+    description: Basic error code
     type: string
   message:
     description: >
