@@ -10,7 +10,7 @@ properties:
     description: Идентификатор события в системе
     type: integer
   occuredAt:
-    description: Дата и время возникновения события
+    description: Date and time the event occurrence
     type: string
     format: date-time
   topic:
