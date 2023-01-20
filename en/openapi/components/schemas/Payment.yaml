@@ -37,11 +37,10 @@ properties:
     minimum: 1
   currency:
     description: |
-      Валюта, символьный код согласно
-      [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+      Currency character code according to [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   metadata:
-    description: Связанные с платежом метаданные
+    description: Payment metadata
     type: object
   paymentToolToken:
     description: >
