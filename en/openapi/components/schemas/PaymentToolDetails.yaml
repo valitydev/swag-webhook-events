@@ -1,5 +1,5 @@
 type: object
-description: Детали платежного средства
+description: Payment tool details
 required:
   - detailsType
 properties:
