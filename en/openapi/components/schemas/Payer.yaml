@@ -3,7 +3,7 @@ required:
   - payerType
 properties:
   payerType:
-    description: Тип платежного средства
+    description: Payment tool type
     type: string
     enum:
       - CustomerPayer
