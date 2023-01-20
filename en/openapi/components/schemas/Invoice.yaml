@@ -1,4 +1,4 @@
-description: Данные инвойса
+description: Invoice details
 type: object
 required:
   - id
@@ -47,11 +47,10 @@ properties:
     minimum: 1
   currency:
     description: |
-      Валюта, символьный код согласно
-      [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+      Currency character code according to [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   metadata:
-    description: Связанные с инвойсом метаданные
+    description: Invoice metadata
     type: object
   product:
     description: Name of the offered goods or services
