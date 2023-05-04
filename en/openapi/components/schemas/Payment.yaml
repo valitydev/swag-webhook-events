@@ -85,3 +85,6 @@ properties:
     description: >
       Уникальный номер транзакции в системе авторизации и расчетов обслуживающего банка
     type: string
+  externalId:
+    description: Идентификатор транзакции со стороны мерчанта
+    type: string
