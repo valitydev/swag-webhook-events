@@ -66,3 +66,6 @@ properties:
     maxItems: 100
     items:
       $ref: '../schemas/InvoiceCartLine.yaml'
+  externalId:
+    description: Идентификатор транзакции со стороны мерчанта
+    type: string
