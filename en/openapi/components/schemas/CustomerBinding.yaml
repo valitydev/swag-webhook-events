@@ -10,7 +10,7 @@ allOf:
       - paymentResource
     properties:
       id:
-        description: Идентификатор привязки
+        description: Customer binding identifier
         type: string
       paymentResource:
         $ref: '../schemas/PaymentResource.yaml'
