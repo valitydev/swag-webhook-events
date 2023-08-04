@@ -22,5 +22,5 @@ properties:
   contactInfo:
     $ref: '../schemas/ContactInfo.yaml'
   metadata:
-    description: Связанные с плательщиком метаданные
+    description: Customer metadata
     type: object
