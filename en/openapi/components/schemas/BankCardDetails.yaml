@@ -34,7 +34,7 @@ properties:
     description: Payment token provider
     type: string
   issuerCountry:
-    description: Страна эмитент (alpha-3 код по стандарту ISO_3166-1)
+    description: Issuing country (alpha-3 code according to ISO_3166-1)
     type: string
     example:
       - 'RUS'
