@@ -88,7 +88,7 @@ servers:
 tags:
   - 
     name: Event Notifications
-    x-displayName: Оповещения
+    x-displayName: Notifications
     description: Доставка оповещений о событиях платформы.
 paths:
   '/webhook':
