@@ -4,7 +4,7 @@ required:
   - detailsType
 properties:
   detailsType:
-    description: Тип информации о платежном средстве
+    description: Type of payment tool
     type: string
     enum:
       - PaymentToolDetailsBankCard
