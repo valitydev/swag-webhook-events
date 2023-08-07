@@ -78,7 +78,7 @@ properties:
     $ref: '../schemas/Payer.yaml'
   fee:
     description: >
-      Комиссия системы, в минорных денежных единицах.
+      System fee in minor monetary units.
     type: integer
     format: int64
   rrn:
