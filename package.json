@@ -1,11 +1,11 @@
 {
   "name": "swag-webhook-events",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@redocly/openapi-cli": "1.0.0-beta.81",
+    "@redocly/openapi-cli": "1.0.0-beta.94",
     "json-merge-patch": "1.0.2",
-    "redoc-cli": "0.13.7"
+    "redoc-cli": "0.13.21"
   },
   "scripts": {
     "start": "openapi preview-docs",
