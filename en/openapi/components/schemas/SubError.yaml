@@ -7,4 +7,4 @@ properties:
     description: Details of the error code
     type: string
   subError:
-    $ref: '../schemas/SubError.yaml'
+    $ref: "../schemas/SubError.yaml"
