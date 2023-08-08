@@ -1,6 +1,5 @@
 description: |
-  Событие об успешном завершении платежа, что является подтверждением
-  возникновения денежных обязательств платформы перед вами
+  Payment successful completion event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
