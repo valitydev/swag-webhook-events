@@ -1,4 +1,4 @@
-description: Статус привязки плательщика к платежному средству
+description: Status of binding the customer to the payment tool
 type: object
 required:
   - status
