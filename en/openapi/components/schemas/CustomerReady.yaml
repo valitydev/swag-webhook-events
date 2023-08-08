@@ -1,4 +1,4 @@
-description: Событие о наступлении готовности плательщика к проведению оплаты
+description: Event on the occurrence of the customer's readiness to make payment
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
