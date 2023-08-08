@@ -1,4 +1,4 @@
-description: Данные платежа в рамках инвойса
+description: Invoice payment data
 type: object
 required:
   - id
@@ -31,7 +31,7 @@ properties:
     $ref: '../schemas/PaymentError.yaml'
   amount:
     description: >
-      Стоимость предлагаемых товаров или услуг, в минорных денежных единицах, например в копейках в случае указания российских рублей в качестве валюты.
+      The price of the goods or services offered, in minor monetary units, e.g. cents if U.S. dollars are specified as the currency
     type: integer
     format: int64
     minimum: 1
@@ -44,18 +44,18 @@ properties:
     type: object
   paymentToolToken:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
-      Токен платежного средства, предоставленного плательщиком
+      **Deprecated.** _Use the `payer` property._
+      Payment tool token
     type: string
   paymentSession:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
-      Идентификатор платежной сессии
+      **Deprecated.** _Use the `payer` property._
+      Payment session identifier
     type: string
   contactInfo:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
-      Контактные данные плательщика
+      **Deprecated.** _Use the `payer` property._
+      Payer contact information
     type: object
     properties:
       email:
@@ -66,13 +66,13 @@ properties:
         type: string
   ip:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
-      IP-адрес плательщика
+      **Deprecated.** _Use the `payer` property._
+      Payer's IP-address
     type: string
   fingerprint:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
-      Уникальный отпечаток user agent'а плательщика
+      **Deprecated.** _Use the `payer` property._
+      Payer's fingerprint
     type: string
   payer:
     $ref: '../schemas/Payer.yaml'
@@ -83,8 +83,8 @@ properties:
     format: int64
   rrn:
     description: >
-      Уникальный номер транзакции в системе авторизации и расчетов обслуживающего банка
+      Retrieval reference number
     type: string
   externalId:
-    description: Идентификатор транзакции со стороны мерчанта
+    description: Merchant's transaction identifier
     type: string
