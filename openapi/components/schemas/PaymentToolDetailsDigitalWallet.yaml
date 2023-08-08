@@ -1,4 +1,4 @@
 type: object
 allOf:
-  - $ref: '../schemas/PaymentToolDetails.yaml'
-  - $ref: '../schemas/DigitalWalletDetails.yaml'
+  - $ref: "../schemas/PaymentToolDetails.yaml"
+  - $ref: "../schemas/DigitalWalletDetails.yaml"

@@ -1,14 +1,13 @@
 description: |
-  Событие об отмене платежа, в результате которого списание денежных средств с
-  плательщика аннулируется
+  Payment cancelation event, as a result of which the charge of funds from the payer is canceled
 allOf:
-  - $ref: '../schemas/Event.yaml'
+  - $ref: "../schemas/Event.yaml"
   - type: object
     required:
       - invoice
       - payment
     properties:
       invoice:
-        $ref: '../schemas/Invoice.yaml'
+        $ref: "../schemas/Invoice.yaml"
       payment:
-        $ref: '../schemas/Payment.yaml'
+        $ref: "../schemas/Payment.yaml"

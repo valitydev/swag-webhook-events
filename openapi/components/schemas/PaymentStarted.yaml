@@ -1,12 +1,12 @@
-description: Событие о запуске платежа в рамках инвойса
+description: Invoice payment start event
 allOf:
-  - $ref: '../schemas/Event.yaml'
+  - $ref: "../schemas/Event.yaml"
   - type: object
     required:
       - invoice
       - payment
     properties:
       invoice:
-        $ref: '../schemas/Invoice.yaml'
+        $ref: "../schemas/Invoice.yaml"
       payment:
-        $ref: '../schemas/Payment.yaml'
+        $ref: "../schemas/Payment.yaml"

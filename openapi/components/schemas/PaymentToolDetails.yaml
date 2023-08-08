@@ -1,10 +1,10 @@
 type: object
-description: Детали платежного средства
+description: Payment tool details
 required:
   - detailsType
 properties:
   detailsType:
-    description: Тип информации о платежном средстве
+    description: Type of payment tool
     type: string
     enum:
       - PaymentToolDetailsBankCard
@@ -15,8 +15,8 @@ properties:
 discriminator:
   propertyName: detailsType
   mapping:
-    'PaymentToolDetailsBankCard': '../schemas/PaymentToolDetailsBankCard.yaml'
-    'PaymentToolDetailsPaymentTerminal': '../schemas/PaymentToolDetailsPaymentTerminal.yaml'
-    'PaymentToolDetailsDigitalWallet': '../schemas/PaymentToolDetailsDigitalWallet.yaml'
-    'PaymentToolDetailsCryptoWallet': '../schemas/PaymentToolDetailsCryptoWallet.yaml'
-    'PaymentToolDetailsMobileCommerce': '../schemas/PaymentToolDetailsMobileCommerce.yaml'
+    "PaymentToolDetailsBankCard": "../schemas/PaymentToolDetailsBankCard.yaml"
+    "PaymentToolDetailsPaymentTerminal": "../schemas/PaymentToolDetailsPaymentTerminal.yaml"
+    "PaymentToolDetailsDigitalWallet": "../schemas/PaymentToolDetailsDigitalWallet.yaml"
+    "PaymentToolDetailsCryptoWallet": "../schemas/PaymentToolDetailsCryptoWallet.yaml"
+    "PaymentToolDetailsMobileCommerce": "../schemas/PaymentToolDetailsMobileCommerce.yaml"

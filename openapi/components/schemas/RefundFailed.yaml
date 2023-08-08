@@ -1,6 +1,6 @@
-description: Событие о неуспешном завершении рефанда
+description: Event of unsuccessful completion of a refund
 allOf:
-  - $ref: '../schemas/Event.yaml'
+  - $ref: "../schemas/Event.yaml"
   - type: object
     required:
       - invoice
@@ -8,8 +8,8 @@ allOf:
       - refund
     properties:
       invoice:
-        $ref: '../schemas/Invoice.yaml'
+        $ref: "../schemas/Invoice.yaml"
       payment:
-        $ref: '../schemas/Payment.yaml'
+        $ref: "../schemas/Payment.yaml"
       refund:
-        $ref: '../schemas/Refund.yaml'
+        $ref: "../schemas/Refund.yaml"

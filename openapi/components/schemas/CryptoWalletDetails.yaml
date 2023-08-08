@@ -2,6 +2,6 @@ required:
   - cryptoCurrency
 properties:
   cryptoCurrency:
-    $ref: '../schemas/CryptoCurrency.yaml'
+    $ref: "../schemas/CryptoCurrency.yaml"
   cryptoCurrencyType:
-    $ref: '../schemas/CryptoCurrencyType.yaml'
+    $ref: "../schemas/CryptoCurrencyType.yaml"

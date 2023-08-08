@@ -1,4 +1,4 @@
-description: Данные платежа в рамках инвойса
+description: Invoice payment data
 type: object
 required:
   - id
@@ -11,14 +11,14 @@ required:
   - payer
 properties:
   id:
-    description: Идентификатор платежа
+    description: Payment ID
     type: string
   createdAt:
-    description: Дата и время создания
+    description: Date and time of creation
     type: string
     format: date-time
   status:
-    description: Статус платежа
+    description: Payment status
     type: string
     enum:
       - pending
@@ -28,70 +28,75 @@ properties:
       - refunded
       - failed
   error:
-    $ref: '../schemas/PaymentError.yaml'
+    $ref: "../schemas/PaymentError.yaml"
   amount:
     description: >
-      Стоимость предлагаемых товаров или услуг, в минорных денежных единицах,
-      например в копейках в случае указания российских рублей в качестве валюты.
+      The price of the goods or services offered, in minor monetary units, e.g.
+      cents if U.S. dollars are specified as the currency
     type: integer
     format: int64
     minimum: 1
   currency:
     description: |
-      Валюта, символьный код согласно
-      [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+      Currency character code according to
+      [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   metadata:
-    description: Связанные с платежом метаданные
+    description: Payment metadata
     type: object
   paymentToolToken:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
+      **Deprecated.** _Use the `payer` property._
 
-      Токен платежного средства, предоставленного плательщиком
+
+      Payment tool token
     type: string
   paymentSession:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
+      **Deprecated.** _Use the `payer` property._
 
-      Идентификатор платежной сессии
+
+      Payment session identifier
     type: string
   contactInfo:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
+      **Deprecated.** _Use the `payer` property._
 
-      Контактные данные плательщика
+
+      Payer contact information
     type: object
     properties:
       email:
-        description: Адрес электронной почты
+        description: Email address
         type: string
       phoneNumber:
-        description: Номер мобильного телефона
+        description: Phone number
         type: string
   ip:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
+      **Deprecated.** _Use the `payer` property._
 
-      IP-адрес плательщика
+
+      Payer's IP-address
     type: string
   fingerprint:
     description: >
-      **Deprecated.** _Используйте свойство `payer`._
+      **Deprecated.** _Use the `payer` property._
 
-      Уникальный отпечаток user agent'а плательщика
+
+      Payer's fingerprint
     type: string
   payer:
-    $ref: '../schemas/Payer.yaml'
+    $ref: "../schemas/Payer.yaml"
   fee:
     description: >
-      Комиссия системы, в минорных денежных единицах.
+      System fee in minor monetary units.
     type: integer
     format: int64
   rrn:
     description: >
-      Уникальный номер транзакции в системе авторизации и расчетов обслуживающего банка
+      Retrieval reference number
     type: string
   externalId:
-    description: Идентификатор транзакции со стороны мерчанта
+    description: Merchant's transaction identifier
     type: string
