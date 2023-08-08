@@ -9,7 +9,6 @@ allOf:
       phoneNumberMask:
         type: string
         description: |
-          Маскированный номер телефона плательщика в международном формате, выступающий
-          в роли идентификатора кошелька Visa QIWI Wallet.
+          Masked phone number of the payer in international format
         pattern: '^\+\d\*{1,10}\d{2,4}$'
         example: '+7******3210'
