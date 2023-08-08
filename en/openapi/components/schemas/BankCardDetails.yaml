@@ -37,13 +37,13 @@ properties:
     description: Issuing country (alpha-3 code according to ISO_3166-1)
     type: string
     example:
-      - 'RUS'
-      - 'POL'
-      - 'USA'
+      - "RUS"
+      - "POL"
+      - "USA"
   bankName:
     description: Bank name
     type: string
     example:
-      - 'SBERBANK OF RUSSIA'
-      - 'JOINT STOCK COMPANY ALFA-BANK'
-      - 'VTB BANK OJSC'
+      - "SBERBANK OF RUSSIA"
+      - "JOINT STOCK COMPANY ALFA-BANK"
+      - "VTB BANK OJSC"
