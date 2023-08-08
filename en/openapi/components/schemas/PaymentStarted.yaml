@@ -1,4 +1,4 @@
-description: Событие о запуске платежа в рамках инвойса
+description: Invoice payment start event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
