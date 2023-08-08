@@ -1,8 +1,8 @@
-description: |
+description: >
   An event of unsuccessful completion of payment with a reason, e.g. in case of if the payer does not have sufficient funds available
 allOf:
   - 
-    $ref: '../schemas/Event.yaml'
+    $ref: "../schemas/Event.yaml"
   - 
     type: object
     required:
@@ -10,6 +10,6 @@ allOf:
       - payment
     properties:
       invoice:
-        $ref: '../schemas/Invoice.yaml'
+        $ref: "../schemas/Invoice.yaml"
       payment:
-        $ref: '../schemas/Payment.yaml'
+        $ref: "../schemas/Payment.yaml"
