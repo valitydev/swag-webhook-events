@@ -1,4 +1,4 @@
-description: Событие о запуске рефанда в рамках платежа
+description: Payment refund start event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
