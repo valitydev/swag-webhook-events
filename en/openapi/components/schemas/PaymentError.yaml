@@ -10,8 +10,8 @@ properties:
     type: string
   message:
     description: >
-      **Deprecated.** _Используйте `subError` для детализации описания ошибки._
-      Описание ошибки
+      **Deprecated.** _Use `subError` to detail the error description._
+      Error description
     type: string
   subError:
     $ref: '../schemas/SubError.yaml'
