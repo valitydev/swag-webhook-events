@@ -1,4 +1,4 @@
-description: Событие о статусе ожидания рефанда
+description: Refund pending status event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
