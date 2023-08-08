@@ -1,7 +1,7 @@
 description: Customer binding creation event
 allOf:
   - 
-    $ref: '../schemas/Event.yaml'
+    $ref: "../schemas/Event.yaml"
   - 
     type: object
     required:
@@ -9,6 +9,6 @@ allOf:
       - binding
     properties:
       customer:
-        $ref: '../schemas/Customer.yaml'
+        $ref: "../schemas/Customer.yaml"
       binding:
-        $ref: '../schemas/CustomerBinding.yaml'
+        $ref: "../schemas/CustomerBinding.yaml"
