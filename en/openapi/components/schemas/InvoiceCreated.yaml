@@ -1,4 +1,4 @@
-description: Событие о создании нового инвойса
+description: Invoice creation event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
