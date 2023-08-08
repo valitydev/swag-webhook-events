@@ -1,4 +1,4 @@
-description: Событие об удалении плательщика
+description: Customer deletion event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
