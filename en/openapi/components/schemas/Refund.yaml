@@ -23,7 +23,8 @@ properties:
       - failed
   error:
     description: |
-      Description of the error that occurred during the refund process, if the refund was unsuccessful
+      Description of the error that occurred during the refund process, if the
+      refund was unsuccessful
     type: object
     required:
       - code
@@ -40,7 +41,7 @@ properties:
     format: int64
     minimum: 1
   currency:
-    description: |
+    description: >
       Currency character code according to [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   reason:
