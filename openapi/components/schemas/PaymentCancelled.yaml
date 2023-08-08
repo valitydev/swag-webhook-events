@@ -1,5 +1,6 @@
-description: |
-  Payment cancelation event, as a result of which the charge of funds from the payer is canceled
+description: >
+  Payment cancelation event, as a result of which the charge of funds from the
+  payer is canceled
 allOf:
   - $ref: "../schemas/Event.yaml"
   - type: object

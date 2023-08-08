@@ -14,7 +14,8 @@ info:
 
 
     The specification defines a protocol for delivering notifications about new
-    payment events within your organisation. The notifications are deliveried by the system as HTTP requests to the URL of webhooks you created. Handlers
+    payment events within your organisation. The notifications are deliveried
+    by the system as HTTP requests to the URL of webhooks you created. Handlers
     for such kind of queries should be implemented on the side of your server
     code according to the specification.
 
@@ -22,7 +23,8 @@ info:
     Webhook is a subscription to a specific type of event or group of events
     relating to different objects within your organisation. API methods
     described in the specification
-    [Payment Webhook Management API](https://github.com/valitydev/swag-payments) are used to manage webhooks.
+    [Payment Webhook Management API](https://github.com/valitydev/swag-payments)
+    are used to manage webhooks.
 
 
     When within the wallet one of the events occurs (e.g. a wallet status
@@ -83,7 +85,8 @@ info:
     ### [RS256](https://tools.ietf.org/html/rfc7518#section-3.3)
 
     The signature is generated according to
-    [RSASSA-PKCS1-v1_5](https://tools.ietf.org/html/rfc3447#section-8.2) algorithm , which itself uses result of message
+    [RSASSA-PKCS1-v1_5](https://tools.ietf.org/html/rfc3447#section-8.2)
+    algorithm , which itself uses result of message
     [SHA-256](https://tools.ietf.org/html/rfc6234) calculation.
 
 

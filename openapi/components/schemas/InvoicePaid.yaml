@@ -1,5 +1,6 @@
-description: |
-  The event of full payment of an invoice, which is the reason to start providing goods or services to the payer
+description: >
+  The event of full payment of an invoice, which is the reason to start
+  providing goods or services to the payer
 allOf:
   - $ref: "../schemas/Event.yaml"
   - type: object
