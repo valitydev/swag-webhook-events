@@ -1,4 +1,4 @@
-description: Данные рефанда в рамках платежа
+description: Refund data within the payment
 type: object
 required:
   - id
@@ -8,7 +8,7 @@ required:
   - currency
 properties:
   id:
-    description: Идентификатор рефанда
+    description: Refund identifier
     type: string
   createdAt:
     description: Date and time of creation
@@ -23,8 +23,7 @@ properties:
       - failed
   error:
     description: |
-      Описание ошибки, возникшей в процессе проведения рефанда, в случае
-      если рефанд завершился неуспешно
+      Description of the error that occurred during the refund process, if the refund was unsuccessful
     type: object
     required:
       - code
@@ -36,7 +35,7 @@ properties:
         type: string
   amount:
     description: >
-      Возвращаемая сумма, в минорных денежных единицах, например в копейках в случае указания российских рублей в качестве валюты.
+      Refund amount in minor monetary units, e.g. cents if U.S. dollars are specified as the currency
     type: integer
     format: int64
     minimum: 1
@@ -49,5 +48,5 @@ properties:
     type: string
   rrn:
     description: >
-      Уникальный номер транзакции в системе авторизации и расчетов обслуживающего банка
+      Retrieval reference number
     type: string
