@@ -1,6 +1,4 @@
-[![wercker status](https://app.wercker.com/status/ad4c9babc69725d9d19ff2df29ac85bf/s/master "wercker status")](https://app.wercker.com/project/byKey/ad4c9babc69725d9d19ff2df29ac85bf)
-
-# RBKmoney Webhooks Events API Specification
+# Vality Webhooks Events API Specification
 
 ## Working on specification
 ### Install
@@ -12,7 +10,7 @@
 ### Usage
 
 1. Run `npm start`
-2. Checkout console output to see where local server is started. You can use all [links](#links) (except `preview`) by replacing https://github.com/antonlva/swag-webhook-events.git/ with url from the message: `Server started <url>`
+2. Checkout console output to see where local server is started. You can use all [links](#links) (except `preview`) by replacing https://github.com/vality/swag-webhook-events.git/ with url from the message: `Server started <url>`
 3. Make changes using your favorite editor or `swagger-editor` (look for URL in console output)
 4. All changes are immediately propagated to your local server, moreover all documentation pages will be automagically refreshed in a browser after each change
 **TIP:** you can open `swagger-editor`, documentation and `swagger-ui` in parallel
