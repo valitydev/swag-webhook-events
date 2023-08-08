@@ -1,6 +1,6 @@
 allOf:
   - 
-    $ref: '../schemas/DigitalWalletDetails.yaml'
+    $ref: "../schemas/DigitalWalletDetails.yaml"
   - 
     type: object
     required:
@@ -11,4 +11,4 @@ allOf:
         description: |
           Masked phone number of the payer in international format
         pattern: '^\+\d\*{1,10}\d{2,4}$'
-        example: '+7******3210'
+        example: "+7******3210"
