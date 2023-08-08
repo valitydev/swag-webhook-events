@@ -1,11 +1,11 @@
 description: Customer deletion event
 allOf:
   - 
-    $ref: '../schemas/Event.yaml'
+    $ref: "../schemas/Event.yaml"
   - 
     type: object
     required:
       - customer
     properties:
       customer:
-        $ref: '../schemas/Customer.yaml'
+        $ref: "../schemas/Customer.yaml"
