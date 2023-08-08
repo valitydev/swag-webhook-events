@@ -14,14 +14,14 @@ properties:
     type: string
     format: date-time
   topic:
-    description: Предмет оповещения
+    description: Subject of notification
     type: string
     enum:
       - InvoicesTopic
       - CustomersTopic
   eventType:
     type: string
-    description: Тип произошедшего с предметом оповещения события
+    description: Type of event that occurred
     enum:
       - InvoiceCreated
       - InvoicePaid
