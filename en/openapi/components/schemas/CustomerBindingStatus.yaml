@@ -11,4 +11,4 @@ properties:
       - succeeded
       - failed
   error:
-    $ref: '../schemas/CustomerBindingError.yaml'
+    $ref: "../schemas/CustomerBindingError.yaml"
