@@ -1,7 +1,7 @@
 type: object
 allOf:
   - 
-    $ref: '../schemas/Payer.yaml'
+    $ref: "../schemas/Payer.yaml"
   - 
     type: object
     required:
@@ -10,4 +10,3 @@ allOf:
       customerID:
         description: Customer ID
         type: string
-
