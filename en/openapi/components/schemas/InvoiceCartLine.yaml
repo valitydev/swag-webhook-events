@@ -12,8 +12,7 @@ properties:
     maxLength: 1000
   quantity:
     description: |
-      Количество единиц товаров или услуг, предлагаемых на продажу в этой
-      позиции
+      Number of units of goods or services offered in this item
     type: integer
     format: int64
     minimum: 1
@@ -31,13 +30,13 @@ properties:
     format: int64
     minimum: 1
   taxMode:
-    description: Схема налогообложения предлагаемого товара или услуги. Указывается, только если предлагаемый товар или услуга облагается налогом.
+    description: The tax mode for the proposed good or service.To be specified only if the proposed good or service is taxable.
     type: object
     required:
       - rate
     properties:
       rate:
-        description: Ставка НДС
+        description: VAT rate
         type: string
         enum:
           - 0%
