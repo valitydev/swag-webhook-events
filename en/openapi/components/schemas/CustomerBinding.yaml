@@ -1,4 +1,4 @@
-description: Привязка плательщика к платежному средству
+description: Binding of the customer to the payment tool
 type: object
 allOf:
   - 
