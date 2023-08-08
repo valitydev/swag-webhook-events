@@ -1,5 +1,5 @@
-description: Заданный ресурс не найден
+description: Target resource not found
 content:
   application/json; charset=utf-8:
     schema:
-      $ref: '../schemas/GeneralError.yaml'
+      $ref: "../schemas/GeneralError.yaml"

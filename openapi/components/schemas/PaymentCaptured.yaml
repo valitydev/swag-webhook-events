@@ -1,14 +1,13 @@
 description: |
-  Событие об успешном завершении платежа, что является подтверждением
-  возникновения денежных обязательств платформы перед вами
+  Payment successful completion event
 allOf:
-  - $ref: '../schemas/Event.yaml'
+  - $ref: "../schemas/Event.yaml"
   - type: object
     required:
       - invoice
       - payment
     properties:
       invoice:
-        $ref: '../schemas/Invoice.yaml'
+        $ref: "../schemas/Invoice.yaml"
       payment:
-        $ref: '../schemas/Payment.yaml'
+        $ref: "../schemas/Payment.yaml"

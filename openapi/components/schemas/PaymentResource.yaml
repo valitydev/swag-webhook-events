@@ -1,18 +1,18 @@
 type: object
-description: Данные платежного средства
+description: Payment tool details
 required:
   - paymentSession
   - paymentToolToken
 properties:
   paymentToolToken:
-    description: Токен платежного средства, предоставленного плательщиком
+    description: Payment tool token provided by the payer
     type: string
     maxLength: 1000
   paymentSession:
-    description: Идентификатор платежной сессии
+    description: Payment session identifier
     type: string
     maxLength: 1000
   paymentToolDetails:
-    $ref: '../schemas/PaymentToolDetails.yaml'
+    $ref: "../schemas/PaymentToolDetails.yaml"
   clientInfo:
-    $ref: '../schemas/ClientInfo.yaml'
+    $ref: "../schemas/ClientInfo.yaml"

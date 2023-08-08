@@ -8,4 +8,4 @@ properties:
 discriminator:
   propertyName: digitalWalletDetailsType
   mapping:
-    'DigitalWalletDetailsQIWI': '../schemas/DigitalWalletDetailsQIWI.yaml'
+    "DigitalWalletDetailsQIWI": "../schemas/DigitalWalletDetailsQIWI.yaml"

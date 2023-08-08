@@ -1,4 +1,4 @@
-description: Данные инвойса
+description: Invoice data
 type: object
 required:
   - id
@@ -12,18 +12,18 @@ required:
   - product
 properties:
   id:
-    description: Идентификатор инвойса
+    description: Invoice ID
     type: string
   shopID:
-    description: Идентификатор магазина
+    description: Shop ID
     type: string
     format: string
   createdAt:
-    description: Дата и время создания
+    description: Date and time of creation
     type: string
     format: date-time
   status:
-    description: Статус инвойса
+    description: Invoice status
     type: string
     enum:
       - unpaid
@@ -32,41 +32,41 @@ properties:
       - refunded
       - fulfilled
   reason:
-    description: Причина отмены или погашения инвойса
+    description: Reason for invoice cancellation or redemption
     type: string
   dueDate:
-    description: Дата и время истечения срока жизни
+    description: Expiration date and time
     type: string
     format: date-time
   amount:
     description: |
-      Стоимость предлагаемых товаров или услуг, в минорных денежных единицах,
-      например в копейках в случае указания российских рублей в качестве валюты.
+      The price of the goods or services offered, in minor monetary units, e.g.
+      cents if U.S. dollars are specified as the currency
     type: integer
     format: int64
     minimum: 1
   currency:
     description: |
-      Валюта, символьный код согласно
-      [RFC 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+      Currency character code according to
+      [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   metadata:
-    description: Связанные с инвойсом метаданные
+    description: Invoice metadata
     type: object
   product:
-    description: Наименование предлагаемых товаров или услуг
+    description: Name of the offered goods or services
     type: string
   description:
-    description: Описание предлагаемых товаров или услуг
+    description: Description of the goods or services offered
     type: string
   cart:
     description: |
-      Корзина с набором позиций продаваемых товаров или услуг
+      A shopping cart with a list of items of provided goods or services
     type: array
     minItems: 1
     maxItems: 100
     items:
-      $ref: '../schemas/InvoiceCartLine.yaml'
+      $ref: "../schemas/InvoiceCartLine.yaml"
   externalId:
-    description: Идентификатор транзакции со стороны мерчанта
+    description: Merchant's transaction identifier
     type: string

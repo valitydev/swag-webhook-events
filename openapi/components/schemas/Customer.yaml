@@ -1,4 +1,4 @@
-description: Данные плательщика
+description: Customer details
 type: object
 required:
   - id
@@ -8,19 +8,19 @@ required:
   - metadata
 properties:
   id:
-    description: Идентификатор плательщика
+    description: Customer ID
     type: string
   shopID:
-    description: Идентификатор магазина
+    description: Shop ID
     type: string
   status:
-    description: Статус плательщика
+    description: Customer status
     type: string
     enum:
       - ready
       - unready
   contactInfo:
-    $ref: '../schemas/ContactInfo.yaml'
+    $ref: "../schemas/ContactInfo.yaml"
   metadata:
-    description: Связанные с плательщиком метаданные
+    description: Customer metadata
     type: object

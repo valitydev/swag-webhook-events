@@ -1,4 +1,4 @@
-description: Данные события
+description: Event data
 type: object
 required:
   - eventID
@@ -7,21 +7,21 @@ required:
   - eventType
 properties:
   eventID:
-    description: Идентификатор события в системе
+    description: Event identifier
     type: integer
   occuredAt:
-    description: Дата и время возникновения события
+    description: Date and time the event occurrence
     type: string
     format: date-time
   topic:
-    description: Предмет оповещения
+    description: Subject of notification
     type: string
     enum:
       - InvoicesTopic
       - CustomersTopic
   eventType:
     type: string
-    description: Тип произошедшего с предметом оповещения события
+    description: Type of event that occurred
     enum:
       - InvoiceCreated
       - InvoicePaid
@@ -43,27 +43,26 @@ properties:
       - CustomerBindingStarted
       - CustomerBindingSucceeded
       - CustomerBindingFailed
-
 discriminator:
   propertyName: eventType
   mapping:
-    'InvoiceCreated': '../schemas/InvoiceCreated.yaml'
-    'InvoicePaid': '../schemas/InvoicePaid.yaml'
-    'InvoiceCancelled': '../schemas/InvoiceCancelled.yaml'
-    'InvoiceFulfilled': '../schemas/InvoiceFulfilled.yaml'
-    'PaymentStarted': '../schemas/PaymentStarted.yaml'
-    'PaymentProcessed': '../schemas/PaymentProcessed.yaml'
-    'PaymentCaptured': '../schemas/PaymentCaptured.yaml'
-    'PaymentCancelled': '../schemas/PaymentCancelled.yaml'
-    'PaymentRefunded': '../schemas/PaymentRefunded.yaml'
-    'PaymentFailed': '../schemas/PaymentFailed.yaml'
-    'RefundCreated': '../schemas/RefundCreated.yaml'
-    'RefundPending': '../schemas/RefundPending.yaml'
-    'RefundSucceeded': '../schemas/RefundSucceeded.yaml'
-    'RefundFailed': '../schemas/RefundFailed.yaml'
-    'CustomerCreated': '../schemas/CustomerCreated.yaml'
-    'CustomerDeleted': '../schemas/CustomerDeleted.yaml'
-    'CustomerReady': '../schemas/CustomerReady.yaml'
-    'CustomerBindingStarted': '../schemas/CustomerBindingStarted.yaml'
-    'CustomerBindingSucceeded': '../schemas/CustomerBindingSucceeded.yaml'
-    'CustomerBindingFailed': '../schemas/CustomerBindingFailed.yaml'
+    "InvoiceCreated": "../schemas/InvoiceCreated.yaml"
+    "InvoicePaid": "../schemas/InvoicePaid.yaml"
+    "InvoiceCancelled": "../schemas/InvoiceCancelled.yaml"
+    "InvoiceFulfilled": "../schemas/InvoiceFulfilled.yaml"
+    "PaymentStarted": "../schemas/PaymentStarted.yaml"
+    "PaymentProcessed": "../schemas/PaymentProcessed.yaml"
+    "PaymentCaptured": "../schemas/PaymentCaptured.yaml"
+    "PaymentCancelled": "../schemas/PaymentCancelled.yaml"
+    "PaymentRefunded": "../schemas/PaymentRefunded.yaml"
+    "PaymentFailed": "../schemas/PaymentFailed.yaml"
+    "RefundCreated": "../schemas/RefundCreated.yaml"
+    "RefundPending": "../schemas/RefundPending.yaml"
+    "RefundSucceeded": "../schemas/RefundSucceeded.yaml"
+    "RefundFailed": "../schemas/RefundFailed.yaml"
+    "CustomerCreated": "../schemas/CustomerCreated.yaml"
+    "CustomerDeleted": "../schemas/CustomerDeleted.yaml"
+    "CustomerReady": "../schemas/CustomerReady.yaml"
+    "CustomerBindingStarted": "../schemas/CustomerBindingStarted.yaml"
+    "CustomerBindingSucceeded": "../schemas/CustomerBindingSucceeded.yaml"
+    "CustomerBindingFailed": "../schemas/CustomerBindingFailed.yaml"

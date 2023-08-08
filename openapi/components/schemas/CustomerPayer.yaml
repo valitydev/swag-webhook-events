@@ -1,11 +1,10 @@
 type: object
 allOf:
-  - $ref: '../schemas/Payer.yaml'
+  - $ref: "../schemas/Payer.yaml"
   - type: object
     required:
       - customerID
     properties:
       customerID:
-        description: Идентификатор плательщика
+        description: Customer ID
         type: string
-

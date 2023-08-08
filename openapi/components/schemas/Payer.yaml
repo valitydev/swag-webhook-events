@@ -3,7 +3,7 @@ required:
   - payerType
 properties:
   payerType:
-    description: Тип платежного средства
+    description: Payment tool type
     type: string
     enum:
       - CustomerPayer
@@ -12,6 +12,6 @@ properties:
 discriminator:
   propertyName: payerType
   mapping:
-    'CustomerPayer': '../schemas/CustomerPayer.yaml'
-    'PaymentResourcePayer': '../schemas/PaymentResourcePayer.yaml'
-    'RecurrentPayer': '../schemas/RecurrentPayer.yaml'
+    "CustomerPayer": "../schemas/CustomerPayer.yaml"
+    "PaymentResourcePayer": "../schemas/PaymentResourcePayer.yaml"
+    "RecurrentPayer": "../schemas/RecurrentPayer.yaml"

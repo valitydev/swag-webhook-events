@@ -1,14 +1,14 @@
-description: |
-  Событие о неуспешном завершении платежа с указанием причины, например в
-  случае отсутствия достаточного количества денежных средств у плательщика
+description: >
+  An event of unsuccessful completion of payment with a reason, e.g. in case of
+  if the payer does not have sufficient funds available
 allOf:
-  - $ref: '../schemas/Event.yaml'
+  - $ref: "../schemas/Event.yaml"
   - type: object
     required:
       - invoice
       - payment
     properties:
       invoice:
-        $ref: '../schemas/Invoice.yaml'
+        $ref: "../schemas/Invoice.yaml"
       payment:
-        $ref: '../schemas/Payment.yaml'
+        $ref: "../schemas/Payment.yaml"
