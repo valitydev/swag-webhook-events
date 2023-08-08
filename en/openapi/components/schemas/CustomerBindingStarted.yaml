@@ -1,4 +1,4 @@
-description: Событие о создании привязки плательщика к платежному средству
+description: Customer binding creation event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
