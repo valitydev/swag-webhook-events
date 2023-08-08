@@ -1,5 +1,5 @@
 type: object
-description: Данные платежного средства
+description: Payment tool details
 required:
   - paymentSession
   - paymentToolToken
