@@ -1,4 +1,4 @@
-description: Событие об успешном осуществлении возврата платежа
+description: Successful payment refund event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
