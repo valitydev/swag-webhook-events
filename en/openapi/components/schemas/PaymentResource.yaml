@@ -13,6 +13,6 @@ properties:
     type: string
     maxLength: 1000
   paymentToolDetails:
-    $ref: '../schemas/PaymentToolDetails.yaml'
+    $ref: "../schemas/PaymentToolDetails.yaml"
   clientInfo:
-    $ref: '../schemas/ClientInfo.yaml'
+    $ref: "../schemas/ClientInfo.yaml"
