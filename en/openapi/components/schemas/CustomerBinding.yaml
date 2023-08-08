@@ -2,7 +2,7 @@ description: Binding of the customer to the payment tool
 type: object
 allOf:
   - 
-    $ref: '../schemas/CustomerBindingStatus.yaml'
+    $ref: "../schemas/CustomerBindingStatus.yaml"
   - 
     type: object
     required:
@@ -13,4 +13,4 @@ allOf:
         description: Customer binding identifier
         type: string
       paymentResource:
-        $ref: '../schemas/PaymentResource.yaml'
+        $ref: "../schemas/PaymentResource.yaml"
