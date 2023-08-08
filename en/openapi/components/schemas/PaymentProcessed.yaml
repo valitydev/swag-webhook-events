@@ -1,4 +1,4 @@
-description: Событие об успешной обработке платежа
+description: Payment processing success event
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
