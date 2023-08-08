@@ -32,7 +32,7 @@ jobs:
         run: npm install
 
       - name: Bundle spec and build docsite
-        run: npm run build -- web_deploy
+        run: npm run build --
 
       - name: Prepare release artifacts
         run: mkdir -p out && cp web_deploy/openapi.{yaml,json} package.json package-lock.json out/
