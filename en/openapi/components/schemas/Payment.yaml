@@ -28,7 +28,7 @@ properties:
       - refunded
       - failed
   error:
-    $ref: '../schemas/PaymentError.yaml'
+    $ref: "../schemas/PaymentError.yaml"
   amount:
     description: >
       The price of the goods or services offered, in minor monetary units, e.g. cents if U.S. dollars are specified as the currency
@@ -37,7 +37,8 @@ properties:
     minimum: 1
   currency:
     description: |
-      Currency character code according to [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+      Currency character code according to
+      [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
     type: string
   metadata:
     description: Payment metadata
@@ -45,16 +46,19 @@ properties:
   paymentToolToken:
     description: >
       **Deprecated.** _Use the `payer` property._
+
       Payment tool token
     type: string
   paymentSession:
     description: >
       **Deprecated.** _Use the `payer` property._
+
       Payment session identifier
     type: string
   contactInfo:
     description: >
       **Deprecated.** _Use the `payer` property._
+
       Payer contact information
     type: object
     properties:
@@ -67,15 +71,17 @@ properties:
   ip:
     description: >
       **Deprecated.** _Use the `payer` property._
+
       Payer's IP-address
     type: string
   fingerprint:
     description: >
       **Deprecated.** _Use the `payer` property._
+
       Payer's fingerprint
     type: string
   payer:
-    $ref: '../schemas/Payer.yaml'
+    $ref: "../schemas/Payer.yaml"
   fee:
     description: >
       System fee in minor monetary units.
