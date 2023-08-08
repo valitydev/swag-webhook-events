@@ -1,6 +1,6 @@
 type: object
 allOf:
   - 
-    $ref: '../schemas/PaymentToolDetails.yaml'
+    $ref: "../schemas/PaymentToolDetails.yaml"
   - 
-    $ref: '../schemas/MobileCommerceDetails.yaml'
+    $ref: "../schemas/MobileCommerceDetails.yaml"
