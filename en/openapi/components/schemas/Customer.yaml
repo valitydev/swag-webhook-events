@@ -20,7 +20,7 @@ properties:
       - ready
       - unready
   contactInfo:
-    $ref: '../schemas/ContactInfo.yaml'
+    $ref: "../schemas/ContactInfo.yaml"
   metadata:
     description: Customer metadata
     type: object
