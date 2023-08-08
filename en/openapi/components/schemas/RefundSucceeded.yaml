@@ -1,4 +1,4 @@
-description: Событие об успешном завершении рефанда
+description: Event of successful completion of a refund
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
