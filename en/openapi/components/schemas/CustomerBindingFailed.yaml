@@ -1,4 +1,4 @@
-description: Событие о неуспешной привязке плательщика к платежному средству
+description: Event about unsuccessful binding of the customer to the payment tool
 allOf:
   - 
     $ref: '../schemas/Event.yaml'
