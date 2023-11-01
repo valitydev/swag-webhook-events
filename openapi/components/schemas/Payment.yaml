@@ -101,6 +101,6 @@ properties:
     description: Merchant's transaction identifier
     type: string
   extraPaymentInfo:
-    description: > 
+    description: >
       Additional details about the payment, e.g. masked payer's card number.
     type: object
