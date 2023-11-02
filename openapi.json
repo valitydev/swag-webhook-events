@@ -937,6 +937,10 @@
           "externalId": {
             "description": "Merchant's transaction identifier",
             "type": "string"
+          },
+          "extraPaymentInfo": {
+            "description": "Additional details about the payment, e.g. masked payer's card number.\n",
+            "type": "object"
           }
         }
       },

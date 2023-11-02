@@ -792,6 +792,11 @@ components:
         externalId:
           description: Merchant's transaction identifier
           type: string
+        extraPaymentInfo:
+          description: >
+            Additional details about the payment, e.g. masked payer's card
+            number.
+          type: object
     PaymentStarted:
       description: Invoice payment start event
       allOf:
