@@ -33,6 +33,7 @@ properties:
       - PaymentCancelled
       - PaymentRefunded
       - PaymentFailed
+      - PaymentCashChanged
       - RefundCreated
       - RefundPending
       - RefundSucceeded
@@ -56,6 +57,7 @@ discriminator:
     "PaymentCancelled": "../schemas/PaymentCancelled.yaml"
     "PaymentRefunded": "../schemas/PaymentRefunded.yaml"
     "PaymentFailed": "../schemas/PaymentFailed.yaml"
+    "PaymentCashChanged": "../schemas/PaymentCashChanged.yaml"
     "RefundCreated": "../schemas/RefundCreated.yaml"
     "RefundPending": "../schemas/RefundPending.yaml"
     "RefundSucceeded": "../schemas/RefundSucceeded.yaml"
