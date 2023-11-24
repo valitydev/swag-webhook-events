@@ -35,6 +35,12 @@ properties:
     type: integer
     format: int64
     minimum: 1
+  changedAmount:
+    description: >
+      Changed payment amount on the provider side
+    type: integer
+    format: int64
+    minimum: 1
   currency:
     description: |
       Currency character code according to
