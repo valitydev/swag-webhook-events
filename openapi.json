@@ -115,6 +115,7 @@
               "PaymentCancelled",
               "PaymentRefunded",
               "PaymentFailed",
+              "PaymentCashChanged",
               "RefundCreated",
               "RefundPending",
               "RefundSucceeded",
@@ -141,6 +142,7 @@
             "PaymentCancelled": "#/components/schemas/PaymentCancelled",
             "PaymentRefunded": "#/components/schemas/PaymentRefunded",
             "PaymentFailed": "#/components/schemas/PaymentFailed",
+            "PaymentCashChanged": "#/components/schemas/PaymentCashChanged",
             "RefundCreated": "#/components/schemas/RefundCreated",
             "RefundPending": "#/components/schemas/RefundPending",
             "RefundSucceeded": "#/components/schemas/RefundSucceeded",
@@ -884,6 +886,12 @@
             "format": "int64",
             "minimum": 1
           },
+          "changedAmount": {
+            "description": "Changed payment amount on the provider side\n",
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+          },
           "currency": {
             "description": "Currency character code according to\n[ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).\n",
             "type": "string"
@@ -1061,6 +1069,29 @@
       },
       "PaymentFailed": {
         "description": "An event of unsuccessful completion of payment with a reason, e.g. in case of if the payer does not have sufficient funds available\n",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Event"
+          },
+          {
+            "type": "object",
+            "required": [
+              "invoice",
+              "payment"
+            ],
+            "properties": {
+              "invoice": {
+                "$ref": "#/components/schemas/Invoice"
+              },
+              "payment": {
+                "$ref": "#/components/schemas/Payment"
+              }
+            }
+          }
+        ]
+      },
+      "PaymentCashChanged": {
+        "description": "Event about change of payment amount on the provider's side\n",
         "allOf": [
           {
             "$ref": "#/components/schemas/Event"

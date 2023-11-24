@@ -165,6 +165,7 @@ components:
             - PaymentCancelled
             - PaymentRefunded
             - PaymentFailed
+            - PaymentCashChanged
             - RefundCreated
             - RefundPending
             - RefundSucceeded
@@ -188,6 +189,7 @@ components:
           PaymentCancelled: '#/components/schemas/PaymentCancelled'
           PaymentRefunded: '#/components/schemas/PaymentRefunded'
           PaymentFailed: '#/components/schemas/PaymentFailed'
+          PaymentCashChanged: '#/components/schemas/PaymentCashChanged'
           RefundCreated: '#/components/schemas/RefundCreated'
           RefundPending: '#/components/schemas/RefundPending'
           RefundSucceeded: '#/components/schemas/RefundSucceeded'
@@ -731,6 +733,12 @@ components:
           type: integer
           format: int64
           minimum: 1
+        changedAmount:
+          description: |
+            Changed payment amount on the provider side
+          type: integer
+          format: int64
+          minimum: 1
         currency:
           description: >
             Currency character code according to
@@ -869,6 +877,20 @@ components:
       description: >
         An event of unsuccessful completion of payment with a reason, e.g. in
         case of if the payer does not have sufficient funds available
+      allOf:
+        - $ref: '#/components/schemas/Event'
+        - type: object
+          required:
+            - invoice
+            - payment
+          properties:
+            invoice:
+              $ref: '#/components/schemas/Invoice'
+            payment:
+              $ref: '#/components/schemas/Payment'
+    PaymentCashChanged:
+      description: |
+        Event about change of payment amount on the provider's side
       allOf:
         - $ref: '#/components/schemas/Event'
         - type: object
