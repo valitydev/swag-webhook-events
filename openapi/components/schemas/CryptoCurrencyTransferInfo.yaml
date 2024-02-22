@@ -1,8 +1,8 @@
 description: Crypto currency transfer request
 type: object
 required:
-  - shortPaymentId
-  - due
+  - cryptoAddress
+  - cryptoCash
 properties:
   cryptoAddress:
     description: Crypto address

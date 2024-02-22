@@ -1,8 +1,8 @@
 description: Crypto cash
 type: object
 required:
-  - shortPaymentId
-  - due
+  - cryptoAmount
+  - cryptoCurrency
 properties:
   cryptoAmount:
     $ref: "../schemas/Rational.yaml"

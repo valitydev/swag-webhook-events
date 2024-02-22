@@ -1,7 +1,8 @@
 description: Rational number
 type: object
 required:
-  - apiType
+  - divider
+  - denominator
 properties:
   divider:
     type: integer
