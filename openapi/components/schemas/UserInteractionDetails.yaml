@@ -1,0 +1,21 @@
+type: object
+required:
+  - userInteractionType
+properties:
+  userInteractionType:
+    description: Type of user interactions
+    type: string
+    enum:
+      - BrowserHTTPRequest
+      - PaymentTerminalReceipt
+      - CryptoCurrencyTransferRequest
+      - QrCodeDisplayRequest
+      - ApiExtensionRequest
+discriminator:
+  propertyName: userInteractionType
+  mapping:
+    BrowserHTTPRequest: "../schemas/BrowserHTTPRequest.yaml"
+    PaymentTerminalReceipt: "../schemas/PaymentTerminalReceipt.yaml"
+    CryptoCurrencyTransferRequest: "../schemas/CryptoCurrencyTransferRequest.yaml"
+    QrCodeDisplayRequest: "../schemas/QrCodeDisplayRequest.yaml"
+    ApiExtensionRequest: "../schemas/ApiExtensionRequest.yaml"

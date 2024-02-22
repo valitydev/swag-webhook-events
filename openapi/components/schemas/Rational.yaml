@@ -1,0 +1,13 @@
+description: Rational number
+type: object
+required:
+  - apiType
+properties:
+  divider:
+    type: integer
+    format: int64
+    minimum: 1
+  denominator:
+    type: integer
+    format: int64
+    minimum: 1

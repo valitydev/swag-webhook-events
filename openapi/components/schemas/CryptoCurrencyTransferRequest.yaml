@@ -1,0 +1,9 @@
+description: Crypto currency transfer request
+type: object
+required:
+  - cryptoCurrencyTransferInfo
+allOf:
+  - $ref: "../schemas/UserInteractionDetails.yaml"
+properties:
+  cryptoCurrencyTransferInfo:
+    $ref: "../schemas/CryptoCurrencyTransferInfo.yaml"

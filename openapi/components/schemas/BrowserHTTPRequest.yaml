@@ -1,0 +1,9 @@
+description: Browser http request
+type: object
+required:
+  - browserHTTPInfo
+allOf:
+  - $ref: "../schemas/UserInteractionDetails.yaml"
+properties:
+  browserHTTPInfo:
+    $ref: "../schemas/BrowserHTTPInfo.yaml"

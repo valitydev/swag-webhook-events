@@ -1,0 +1,11 @@
+description: Crypto currency transfer request
+type: object
+required:
+  - shortPaymentId
+  - due
+properties:
+  cryptoAddress:
+    description: Crypto address
+    type: string
+  cryptoCash:
+    $ref: "../schemas/CryptoCurrencyType.yaml"

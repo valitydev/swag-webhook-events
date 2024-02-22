@@ -1,0 +1,7 @@
+type: object
+description: Event about request user interaction
+allOf:
+  - $ref: '../schemas/Event.yaml'
+properties:
+  userInteractionDetails:
+    $ref: '../schemas/UserInteractionDetails.yaml'
