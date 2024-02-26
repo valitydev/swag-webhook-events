@@ -44,6 +44,8 @@ properties:
       - CustomerBindingStarted
       - CustomerBindingSucceeded
       - CustomerBindingFailed
+      - PaymentInteractionRequested
+      - PaymentInteractionCompleted
 discriminator:
   propertyName: eventType
   mapping:
@@ -68,3 +70,5 @@ discriminator:
     "CustomerBindingStarted": "../schemas/CustomerBindingStarted.yaml"
     "CustomerBindingSucceeded": "../schemas/CustomerBindingSucceeded.yaml"
     "CustomerBindingFailed": "../schemas/CustomerBindingFailed.yaml"
+    "PaymentInteractionRequested": "../schemas/PaymentInteractionRequested.yaml"
+    "PaymentInteractionCompleted": "../schemas/PaymentInteractionCompleted.yaml"

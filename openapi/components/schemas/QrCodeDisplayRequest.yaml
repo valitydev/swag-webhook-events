@@ -1,0 +1,9 @@
+description: Browser http request
+type: object
+required:
+  - qrCodeDisplayInfo
+allOf:
+  - $ref: "../schemas/UserInteractionDetails.yaml"
+properties:
+  qrCodeDisplayInfo:
+    $ref: "../schemas/QrCodeDisplayInfo.yaml"

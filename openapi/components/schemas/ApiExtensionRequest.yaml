@@ -1,0 +1,9 @@
+description: Browser http request
+type: object
+required:
+  - apiExtensionInfo
+allOf:
+  - $ref: "../schemas/UserInteractionDetails.yaml"
+properties:
+  apiExtensionInfo:
+    $ref: "../schemas/ApiExtensionInfo.yaml"

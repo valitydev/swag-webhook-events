@@ -1,0 +1,21 @@
+description: Browser http request
+type: object
+required:
+  - requestType
+  - url
+properties:
+  requestType:
+    description: Type of http request
+    type: string
+    enum:
+      - get
+      - post
+  url:
+    description: Uniform Resource Locator
+    type: string
+    maxLength: 1000
+  form:
+    type: object
+    additionalProperties:
+      type: string
+      maxLength: 1000
