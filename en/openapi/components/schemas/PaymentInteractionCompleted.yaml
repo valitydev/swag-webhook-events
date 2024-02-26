@@ -1,0 +1,10 @@
+description: |
+  Event about request user interaction completed
+required:
+  - userInteractionDetails
+allOf:
+  - 
+    $ref: '../schemas/Event.yaml'
+properties:
+  userInteractionDetails:
+    $ref: '../schemas/UserInteractionDetails.yaml'
