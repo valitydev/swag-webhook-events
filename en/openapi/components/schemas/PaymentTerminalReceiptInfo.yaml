@@ -1,0 +1,13 @@
+description: Payment Terminal Receipt
+type: object
+required:
+  - shortPaymentId
+  - due
+properties:
+  shortPaymentId:
+    description: Short payment id
+    type: string
+  due:
+    description: Payment closing date and time
+    type: string
+    format: date-time
