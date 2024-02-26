@@ -176,6 +176,8 @@ components:
             - CustomerBindingStarted
             - CustomerBindingSucceeded
             - CustomerBindingFailed
+            - PaymentInteractionRequested
+            - PaymentInteractionCompleted
       discriminator:
         propertyName: eventType
         mapping:
@@ -200,6 +202,8 @@ components:
           CustomerBindingStarted: '#/components/schemas/CustomerBindingStarted'
           CustomerBindingSucceeded: '#/components/schemas/CustomerBindingSucceeded'
           CustomerBindingFailed: '#/components/schemas/CustomerBindingFailed'
+          PaymentInteractionRequested: '#/components/schemas/PaymentInteractionRequested'
+          PaymentInteractionCompleted: '#/components/schemas/PaymentInteractionCompleted'
     InvoiceCartLine:
       description: Product or service item
       type: object
@@ -1161,6 +1165,165 @@ components:
               $ref: '#/components/schemas/Customer'
             binding:
               $ref: '#/components/schemas/CustomerBinding'
+    UserInteractionDetails:
+      type: object
+      required:
+        - userInteractionType
+      properties:
+        userInteractionType:
+          description: Type of user interactions
+          type: string
+          enum:
+            - BrowserHTTPRequest
+            - PaymentTerminalReceipt
+            - CryptoCurrencyTransferRequest
+            - QrCodeDisplayRequest
+            - ApiExtensionRequest
+      discriminator:
+        propertyName: userInteractionType
+        mapping:
+          BrowserHTTPRequest: '#/components/schemas/BrowserHTTPRequest'
+          PaymentTerminalReceipt: '#/components/schemas/PaymentTerminalReceipt'
+          CryptoCurrencyTransferRequest: '#/components/schemas/CryptoCurrencyTransferRequest'
+          QrCodeDisplayRequest: '#/components/schemas/QrCodeDisplayRequest'
+          ApiExtensionRequest: '#/components/schemas/ApiExtensionRequest'
+    BrowserHTTPInfo:
+      description: Browser http request
+      type: object
+      required:
+        - requestType
+        - url
+      properties:
+        requestType:
+          description: Type of http request
+          type: string
+          enum:
+            - get
+            - post
+        url:
+          description: Uniform Resource Locator
+          type: string
+          maxLength: 1000
+        form:
+          type: object
+          additionalProperties:
+            type: string
+            maxLength: 1000
+    BrowserHTTPRequest:
+      description: Browser http request
+      type: object
+      required:
+        - browserHTTPInfo
+      allOf:
+        - $ref: '#/components/schemas/UserInteractionDetails'
+      properties:
+        browserHTTPInfo:
+          $ref: '#/components/schemas/BrowserHTTPInfo'
+    PaymentTerminalReceiptInfo:
+      description: Payment Terminal Receipt
+      type: object
+      required:
+        - shortPaymentId
+        - due
+      properties:
+        shortPaymentId:
+          description: Short payment id
+          type: string
+        due:
+          description: Payment closing date and time
+          type: string
+          format: date-time
+    PaymentTerminalReceipt:
+      description: Browser http request
+      type: object
+      required:
+        - paymentTerminalReceiptInfo
+      allOf:
+        - $ref: '#/components/schemas/UserInteractionDetails'
+      properties:
+        paymentTerminalReceiptInfo:
+          $ref: '#/components/schemas/PaymentTerminalReceiptInfo'
+    CryptoCurrencyTransferInfo:
+      description: Crypto currency transfer request
+      type: object
+      required:
+        - cryptoAddress
+        - cryptoCash
+      properties:
+        cryptoAddress:
+          description: Crypto address
+          type: string
+        cryptoCash:
+          $ref: '#/components/schemas/CryptoCurrencyType'
+    CryptoCurrencyTransferRequest:
+      description: Crypto currency transfer request
+      type: object
+      required:
+        - cryptoCurrencyTransferInfo
+      allOf:
+        - $ref: '#/components/schemas/UserInteractionDetails'
+      properties:
+        cryptoCurrencyTransferInfo:
+          $ref: '#/components/schemas/CryptoCurrencyTransferInfo'
+    QrCodeDisplayInfo:
+      description: Qr code display request
+      type: object
+      required:
+        - qrCode
+      properties:
+        qrCode:
+          description: Type of http request
+          type: string
+          format: binary
+    QrCodeDisplayRequest:
+      description: Browser http request
+      type: object
+      required:
+        - qrCodeDisplayInfo
+      allOf:
+        - $ref: '#/components/schemas/UserInteractionDetails'
+      properties:
+        qrCodeDisplayInfo:
+          $ref: '#/components/schemas/QrCodeDisplayInfo'
+    ApiExtensionInfo:
+      description: Api extension request
+      type: object
+      required:
+        - apiType
+      properties:
+        apiType:
+          description: Api type
+          type: string
+    ApiExtensionRequest:
+      description: Browser http request
+      type: object
+      required:
+        - apiExtensionInfo
+      allOf:
+        - $ref: '#/components/schemas/UserInteractionDetails'
+      properties:
+        apiExtensionInfo:
+          $ref: '#/components/schemas/ApiExtensionInfo'
+    PaymentInteractionRequested:
+      type: object
+      description: Event about request user interaction
+      required:
+        - userInteractionDetails
+      allOf:
+        - $ref: '#/components/schemas/Event'
+      properties:
+        userInteractionDetails:
+          $ref: '#/components/schemas/UserInteractionDetails'
+    PaymentInteractionCompleted:
+      description: |
+        Event about request user interaction completed
+      required:
+        - userInteractionDetails
+      allOf:
+        - $ref: '#/components/schemas/Event'
+      properties:
+        userInteractionDetails:
+          $ref: '#/components/schemas/UserInteractionDetails'
     GeneralError:
       type: object
       required:
