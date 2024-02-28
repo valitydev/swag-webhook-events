@@ -2,10 +2,13 @@ description: Crypto currency transfer request
 type: object
 required:
   - cryptoAddress
-  - cryptoCash
+  - cryptoAmount
+  - cryptoCurrency
 properties:
   cryptoAddress:
     description: Crypto address
     type: string
-  cryptoCash:
+  cryptoAmount:
+    $ref: "../schemas/Rational.yaml"
+  cryptoCurrency:
     $ref: "../schemas/CryptoCurrencyType.yaml"
