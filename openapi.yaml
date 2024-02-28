@@ -1243,17 +1243,35 @@ components:
       properties:
         paymentTerminalReceiptInfo:
           $ref: '#/components/schemas/PaymentTerminalReceiptInfo'
+    Rational:
+      description: Rational number
+      type: object
+      required:
+        - divider
+        - denominator
+      properties:
+        divider:
+          type: integer
+          format: int64
+          minimum: 1
+        denominator:
+          type: integer
+          format: int64
+          minimum: 1
     CryptoCurrencyTransferInfo:
       description: Crypto currency transfer request
       type: object
       required:
         - cryptoAddress
-        - cryptoCash
+        - cryptoAmount
+        - cryptoCurrency
       properties:
         cryptoAddress:
           description: Crypto address
           type: string
-        cryptoCash:
+        cryptoAmount:
+          $ref: '#/components/schemas/Rational'
+        cryptoCurrency:
           $ref: '#/components/schemas/CryptoCurrencyType'
     CryptoCurrencyTransferRequest:
       description: Crypto currency transfer request
