@@ -1274,7 +1274,6 @@ components:
         qrCode:
           description: Type of http request
           type: string
-          format: binary
     QrCodeDisplayRequest:
       description: Browser http request
       type: object
