@@ -1748,7 +1748,9 @@
         "type": "object",
         "description": "Event about request user interaction",
         "required": [
-          "userInteractionDetails"
+          "userInteractionDetails",
+          "invoiceId",
+          "paymentId"
         ],
         "allOf": [
           {
@@ -1758,13 +1760,23 @@
         "properties": {
           "userInteractionDetails": {
             "$ref": "#/components/schemas/UserInteractionDetails"
+          },
+          "invoiceId": {
+            "description": "Invoice ID",
+            "type": "string"
+          },
+          "paymentId": {
+            "description": "Payment ID",
+            "type": "string"
           }
         }
       },
       "PaymentInteractionCompleted": {
         "description": "Event about request user interaction completed\n",
         "required": [
-          "userInteractionDetails"
+          "userInteractionDetails",
+          "invoiceId",
+          "paymentId"
         ],
         "allOf": [
           {
@@ -1774,6 +1786,14 @@
         "properties": {
           "userInteractionDetails": {
             "$ref": "#/components/schemas/UserInteractionDetails"
+          },
+          "invoiceId": {
+            "description": "Invoice ID",
+            "type": "string"
+          },
+          "paymentId": {
+            "description": "Payment ID",
+            "type": "string"
           }
         }
       },

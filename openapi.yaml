@@ -1326,21 +1326,37 @@ components:
       description: Event about request user interaction
       required:
         - userInteractionDetails
+        - invoiceId
+        - paymentId
       allOf:
         - $ref: '#/components/schemas/Event'
       properties:
         userInteractionDetails:
           $ref: '#/components/schemas/UserInteractionDetails'
+        invoiceId:
+          description: Invoice ID
+          type: string
+        paymentId:
+          description: Payment ID
+          type: string
     PaymentInteractionCompleted:
       description: |
         Event about request user interaction completed
       required:
         - userInteractionDetails
+        - invoiceId
+        - paymentId
       allOf:
         - $ref: '#/components/schemas/Event'
       properties:
         userInteractionDetails:
           $ref: '#/components/schemas/UserInteractionDetails'
+        invoiceId:
+          description: Invoice ID
+          type: string
+        paymentId:
+          description: Payment ID
+          type: string
     GeneralError:
       type: object
       required:
