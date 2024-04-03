@@ -2,8 +2,16 @@ description: |
   Event about request user interaction completed
 required:
   - userInteractionDetails
+  - invoiceId
+  - paymentId
 allOf:
   - $ref: '../schemas/Event.yaml'
 properties:
   userInteractionDetails:
     $ref: '../schemas/UserInteractionDetails.yaml'
+  invoiceId:
+    description: Invoice ID
+    type: string
+  paymentId:
+    description: Payment ID
+    type: string
