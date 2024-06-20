@@ -1,0 +1,106 @@
+description: Invoice payment data
+type: object
+required:
+  - id
+  - createdAt
+  - status
+  - amount
+  - currency
+  - paymentSession
+  - contactInfo
+  - payer
+properties:
+  id:
+    description: Payment ID
+    type: string
+  createdAt:
+    description: Date and time of creation
+    type: string
+    format: date-time
+  status:
+    description: Payment status
+    type: string
+    enum:
+      - pending
+      - processed
+      - captured
+      - cancelled
+      - refunded
+      - failed
+  error:
+    $ref: "../schemas/PaymentError.yaml"
+  amount:
+    description: >
+      The price of the goods or services offered, in minor monetary units, e.g. cents if U.S. dollars are specified as the currency
+    type: integer
+    format: int64
+    minimum: 1
+  changedAmount:
+    description: >
+      Changed payment amount on the provider side
+    type: integer
+    format: int64
+    minimum: 1
+  currency:
+    description: |
+      Currency character code according to
+      [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+    type: string
+  metadata:
+    description: Payment metadata
+    type: object
+  paymentToolToken:
+    description: >
+      **Deprecated.** _Use the `payer` property._
+
+      Payment tool token
+    type: string
+  paymentSession:
+    description: >
+      **Deprecated.** _Use the `payer` property._
+
+      Payment session identifier
+    type: string
+  contactInfo:
+    description: >
+      **Deprecated.** _Use the `payer` property._
+
+      Payer contact information
+    type: object
+    properties:
+      email:
+        description: Email address
+        type: string
+      phoneNumber:
+        description: Phone number
+        type: string
+  ip:
+    description: >
+      **Deprecated.** _Use the `payer` property._
+
+      Payer's IP-address
+    type: string
+  fingerprint:
+    description: >
+      **Deprecated.** _Use the `payer` property._
+
+      Payer's fingerprint
+    type: string
+  payer:
+    $ref: "../schemas/Payer.yaml"
+  fee:
+    description: >
+      System fee in minor monetary units.
+    type: integer
+    format: int64
+  rrn:
+    description: >
+      Retrieval reference number
+    type: string
+  externalId:
+    description: Merchant's transaction identifier
+    type: string
+  extraPaymentInfo:
+    description: >
+      Additional details about the payment, e.g. masked payer's card number.
+    type: object

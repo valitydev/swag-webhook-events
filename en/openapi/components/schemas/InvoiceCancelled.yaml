@@ -1,0 +1,12 @@
+description: |
+  Invoice cancellation event with reason, e.g. expiration of the invoice due date
+allOf:
+  - 
+    $ref: "../schemas/Event.yaml"
+  - 
+    type: object
+    required:
+      - invoice
+    properties:
+      invoice:
+        $ref: "../schemas/Invoice.yaml"
