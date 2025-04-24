@@ -27,6 +27,7 @@ properties:
       - cancelled
       - refunded
       - failed
+      - charged_back
   error:
     $ref: "../schemas/PaymentError.yaml"
   amount:

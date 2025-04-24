@@ -1,0 +1,14 @@
+description: >
+  Payment charged back event, as a result of which the payment being returned to the
+  payer
+allOf:
+  - $ref: "../schemas/Event.yaml"
+  - type: object
+    required:
+      - invoice
+      - payment
+    properties:
+      invoice:
+        $ref: "../schemas/Invoice.yaml"
+      payment:
+        $ref: "../schemas/Payment.yaml"
