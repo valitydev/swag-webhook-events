@@ -728,6 +728,7 @@ components:
             - cancelled
             - refunded
             - failed
+            - charged_back
         error:
           $ref: '#/components/schemas/PaymentError'
         amount:

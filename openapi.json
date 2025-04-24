@@ -878,7 +878,8 @@
               "captured",
               "cancelled",
               "refunded",
-              "failed"
+              "failed",
+              "charged_back"
             ]
           },
           "error": {
