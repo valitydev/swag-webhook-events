@@ -57,6 +57,7 @@ discriminator:
     "PaymentProcessed": "../schemas/PaymentProcessed.yaml"
     "PaymentCaptured": "../schemas/PaymentCaptured.yaml"
     "PaymentCancelled": "../schemas/PaymentCancelled.yaml"
+    "PaymentChargedBack": "../schemas/PaymentChargedBack.yaml"
     "PaymentRefunded": "../schemas/PaymentRefunded.yaml"
     "PaymentFailed": "../schemas/PaymentFailed.yaml"
     "PaymentCashChanged": "../schemas/PaymentCashChanged.yaml"
