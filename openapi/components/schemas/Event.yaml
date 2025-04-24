@@ -31,6 +31,7 @@ properties:
       - PaymentProcessed
       - PaymentCaptured
       - PaymentCancelled
+      - PaymentChargedBack
       - PaymentRefunded
       - PaymentFailed
       - PaymentCashChanged
