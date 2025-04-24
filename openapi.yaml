@@ -189,6 +189,7 @@ components:
           PaymentProcessed: '#/components/schemas/PaymentProcessed'
           PaymentCaptured: '#/components/schemas/PaymentCaptured'
           PaymentCancelled: '#/components/schemas/PaymentCancelled'
+          PaymentChargedBack: '#/components/schemas/PaymentChargedBack'
           PaymentRefunded: '#/components/schemas/PaymentRefunded'
           PaymentFailed: '#/components/schemas/PaymentFailed'
           PaymentCashChanged: '#/components/schemas/PaymentCashChanged'
@@ -854,6 +855,21 @@ components:
       description: >
         Payment cancelation event, as a result of which the charge of funds from
         the payer is canceled
+      allOf:
+        - $ref: '#/components/schemas/Event'
+        - type: object
+          required:
+            - invoice
+            - payment
+          properties:
+            invoice:
+              $ref: '#/components/schemas/Invoice'
+            payment:
+              $ref: '#/components/schemas/Payment'
+    PaymentChargedBack:
+      description: >
+        Payment charged back event, as a result of which the payment being
+        returned to the payer
       allOf:
         - $ref: '#/components/schemas/Event'
         - type: object
