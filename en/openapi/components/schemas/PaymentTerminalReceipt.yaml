@@ -1,0 +1,10 @@
+description: Browser http request
+type: object
+required:
+  - paymentTerminalReceiptInfo
+allOf:
+  - 
+    $ref: "../schemas/UserInteractionDetails.yaml"
+properties:
+  paymentTerminalReceiptInfo:
+    $ref: "../schemas/PaymentTerminalReceiptInfo.yaml"

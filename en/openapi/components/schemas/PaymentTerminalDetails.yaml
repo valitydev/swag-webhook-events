@@ -1,0 +1,16 @@
+required:
+  - provider
+  - providerName
+properties:
+  provider:
+    type: string
+    enum:
+      - euroset
+      - wechat
+      - alipay
+      - qps
+      - uzcard
+      - unknown
+    deprecated: true
+  providerName:
+    type: string
