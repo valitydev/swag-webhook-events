@@ -9,47 +9,18 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  description: >
+  description: |
     ## Payment Webhook Events API
 
+    The specification defines a protocol for delivering notifications about new payment events within your organisation. The notifications are deliveried by the system as HTTP requests to the URL of webhooks you created. Handlers for such kind of queries should be implemented on the side of your server code according to the specification.
 
-    The specification defines a protocol for delivering notifications about new
-    payment events within your organisation. The notifications are deliveried by
-    the system as HTTP requests to the URL of webhooks you created. Handlers for
-    such kind of queries should be implemented on the side of your server code
-    according to the specification.
+    Webhook is a subscription to a specific type of event or group of events relating to different objects within your organisation. API methods described in the specification [Payment Webhook Management API](https://github.com/valitydev/swag-payments) are used to manage webhooks.
 
-
-    Webhook is a subscription to a specific type of event or group of events
-    relating to different objects within your organisation. API methods
-    described in the specification [Payment Webhook Management
-    API](https://github.com/valitydev/swag-payments) are used to manage
-    webhooks.
-
-
-    When within the wallet one of the events occurs (e.g. a wallet status
-    change), the system selects a webhook matching that event type and sends an
-    HTTP request containing a JSON message to the URL specified in the webhook.
-    If several webhooks matching this event type were created, the event is
-    simultaneously delivered to all URLs specified in those webhooks in an
-    undefined order.
-
+    When within the wallet one of the events occurs (e.g. a wallet status change), the system selects a webhook matching that event type and sends an HTTP request containing a JSON message to the URL specified in the webhook. If several webhooks matching this event type were created, the event is simultaneously delivered to all URLs specified in those webhooks in an undefined order.
     ## Delivery strategy
+    The system guarantees events delivery order within a specific notification subject (invoice, payment, refund, etc.). The system maintains a message queue for each notification item to keep the sequence and ensure the guaranteed delivery.
 
-    The system guarantees events delivery order within a specific notification
-    subject (invoice, payment, refund, etc.). The system maintains a message
-    queue for each notification item to keep the sequence and ensure the
-    guaranteed delivery.
-
-
-    A delivery request is considered to be successful only when a response with
-    status `200` is received. The system will wait for a successful response to
-    the sent a request during 10 seconds. In case of a response with any other
-    status or after expiration of the specified time which was reserved to
-    process the notification, the system will try to re-deliver notifications
-    until a successful response is received, or until a decision is made that it
-    is impossible to deliver information. Delivery attempts will be made at the
-    following time intervals between requests:
+    A delivery request is considered to be successful only when a response with status `200` is received. The system will wait for a successful response to the sent a request during 10 seconds. In case of a response with any other status or after expiration of the specified time which was reserved to process the notification, the system will try to re-deliver notifications until a successful response is received, or until a decision is made that it is impossible to deliver information. Delivery attempts will be made at the following time intervals between requests:
 
       - 30 seconds,
 
@@ -61,36 +32,17 @@ info:
 
       - every hour within 24 hours
 
-    If the last attempt of notification delivery fails, all the events that have
-    been accumulated in this payment queue are discarded.
-
+    If the last attempt of notification delivery fails, all the events that have been accumulated in this payment queue are discarded.
     ## Received messages authorization
+    The system confirms notifications authenticity by signing messages with a private key that is unique to each webhook, the paired public key of which is contained in the data of that webhook. The signature is transmitted in the HTTP header Content-Signature. Represented in various atributes the header contains the information about the algorithm used to create a signature and content of the signature in the format [URL-safe base-64](https://tools.ietf.org/html/rfc4648).
 
-    The system confirms notifications authenticity by signing messages with a
-    private key that is unique to each webhook, the paired public key of which
-    is contained in the data of that webhook. The signature is transmitted in
-    the HTTP header Content-Signature. Represented in various atributes the
-    header contains the information about the algorithm used to create a
-    signature and content of the signature in the format [URL-safe
-    base-64](https://tools.ietf.org/html/rfc4648).
-
-
-    ``` Content-Signature: alg=RS256;
-    digest=zFuf7bRH4RHwyktaqHQwmX5rn3LfSb4dKo... ```
-
+    ``` Content-Signature: alg=RS256; digest=zFuf7bRH4RHwyktaqHQwmX5rn3LfSb4dKo... ```
 
     At the moment the only one signature generation alorithm is possible to use.
-
     ### [RS256](https://tools.ietf.org/html/rfc7518#section-3.3)
+    The signature is generated according to [RSASSA-PKCS1-v1_5](https://tools.ietf.org/html/rfc3447#section-8.2) algorithm , which itself uses result of message [SHA-256](https://tools.ietf.org/html/rfc6234) calculation.
 
-    The signature is generated according to
-    [RSASSA-PKCS1-v1_5](https://tools.ietf.org/html/rfc3447#section-8.2)
-    algorithm , which itself uses result of message
-    [SHA-256](https://tools.ietf.org/html/rfc6234) calculation.
-
-
-    The set of header attributes and the list of possible signature generation
-    algorithms can be expanded later.
+    The set of header attributes and the list of possible signature generation algorithms can be expanded later.
 servers:
   - url: https://merchant.site
 tags:
@@ -104,8 +56,8 @@ paths:
         - Event Notifications
       summary: Notify of an event
       operationId: notifyWebhookEvent
-      parameters:
-        - $ref: '#/components/parameters/signature'
+      security:
+        - signature: []
       requestBody:
         description: Data from an event that occurred in the platform
         required: true
@@ -119,15 +71,13 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  parameters:
+  securitySchemes:
     signature:
-      name: Content-Signature
-      in: header
       description: |
-        Message signature formed according to the above rules
-      required: true
-      schema:
-        type: string
+        Message signature formed according to the above rules.
+      name: Content-Signature
+      type: apiKey
+      in: header
   schemas:
     Event:
       description: Event data
@@ -227,23 +177,20 @@ components:
           minimum: 1
           default: 1
         price:
-          description: >
-            The price of the good or service offered, in minor monetary units,
-            e.g. cents if U.S. dollars are specified as the currency
+          description: |
+            The price of the good or service offered, in minor monetary units, e.g. cents if U.S. dollars are specified as the currency
           type: integer
           format: int64
           minimum: 1
         cost:
-          description: >
-            The total value of the item, taking into account the number of units
-            of goods or services
+          description: |
+            The total value of the item, taking into account the number of units of goods or services
           type: integer
           format: int64
           minimum: 1
         taxMode:
-          description: >
-            The tax mode for the proposed good or service.To be specified only
-            if the proposed good or service is taxable.
+          description: |
+            The tax mode for the proposed good or service.To be specified only if the proposed good or service is taxable.
           type: object
           required:
             - rate
@@ -301,20 +248,16 @@ components:
           type: string
           format: date-time
         amount:
-          description: >
-            The price of the goods or services offered, in minor monetary units,
-            e.g.
-
+          description: |
+            The price of the goods or services offered, in minor monetary units, e.g.
             cents if U.S. dollars are specified as the currency
           type: integer
           format: int64
           minimum: 1
         currency:
-          description: >
+          description: |
             Currency character code according to
-
-            [ISO
-            4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+            [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
           type: string
         metadata:
           description: Invoice metadata
@@ -347,9 +290,8 @@ components:
             invoice:
               $ref: '#/components/schemas/Invoice'
     InvoicePaid:
-      description: >
-        The event of full payment of an invoice, which is the reason to start
-        providing goods or services to the payer
+      description: |
+        The event of full payment of an invoice, which is the reason to start providing goods or services to the payer
       allOf:
         - $ref: '#/components/schemas/Event'
         - type: object
@@ -359,9 +301,8 @@ components:
             invoice:
               $ref: '#/components/schemas/Invoice'
     InvoiceCancelled:
-      description: >
-        Invoice cancellation event with reason, e.g. expiration of the invoice
-        due date
+      description: |
+        Invoice cancellation event with reason, e.g. expiration of the invoice due date
       allOf:
         - $ref: '#/components/schemas/Event'
         - type: object
@@ -403,9 +344,8 @@ components:
           description: Basic error code
           type: string
         message:
-          description: >
-            **Deprecated.** _Use `subError` to detail the error description._
-            Error description
+          description: |
+            **Deprecated.** _Use `subError` to detail the error description._ Error description
           type: string
         subError:
           $ref: '#/components/schemas/SubError'
@@ -654,9 +594,8 @@ components:
           format: email
           maxLength: 100
         phoneNumber:
-          description: >
-            Mobile phone number with international prefix according to
-            [E.164](https://en.wikipedia.org/wiki/E.164).
+          description: |
+            Mobile phone number with international prefix according to [E.164](https://en.wikipedia.org/wiki/E.164).
           type: string
           format: ^\+\d{4,15}$
     PaymentResourcePayer:
@@ -673,9 +612,8 @@ components:
               $ref: '#/components/schemas/ContactInfo'
     PaymentRecurrentParent:
       type: object
-      description: >
-        Parent payment, on the basis of which the current recurrent payment was
-        created
+      description: |
+        Parent payment, on the basis of which the current recurrent payment was created
       required:
         - invoiceID
         - paymentID
@@ -734,9 +672,8 @@ components:
         error:
           $ref: '#/components/schemas/PaymentError'
         amount:
-          description: >
-            The price of the goods or services offered, in minor monetary units,
-            e.g. cents if U.S. dollars are specified as the currency
+          description: |
+            The price of the goods or services offered, in minor monetary units, e.g. cents if U.S. dollars are specified as the currency
           type: integer
           format: int64
           minimum: 1
@@ -747,11 +684,9 @@ components:
           format: int64
           minimum: 1
         currency:
-          description: >
+          description: |
             Currency character code according to
-
-            [ISO
-            4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+            [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
           type: string
         metadata:
           description: Payment metadata
@@ -808,9 +743,8 @@ components:
           description: Merchant's transaction identifier
           type: string
         extraPaymentInfo:
-          description: >
-            Additional details about the payment, e.g. masked payer's card
-            number.
+          description: |
+            Additional details about the payment, e.g. masked payer's card number.
           type: object
     PaymentStarted:
       description: Invoice payment start event
@@ -853,9 +787,8 @@ components:
             payment:
               $ref: '#/components/schemas/Payment'
     PaymentCancelled:
-      description: >
-        Payment cancelation event, as a result of which the charge of funds from
-        the payer is canceled
+      description: |
+        Payment cancelation event, as a result of which the charge of funds from the payer is canceled
       allOf:
         - $ref: '#/components/schemas/Event'
         - type: object
@@ -868,9 +801,8 @@ components:
             payment:
               $ref: '#/components/schemas/Payment'
     PaymentChargedBack:
-      description: >
-        Payment charged back event, as a result of which the payment being
-        returned to the payer
+      description: |
+        Payment charged back event, as a result of which the payment being returned to the payer
       allOf:
         - $ref: '#/components/schemas/Event'
         - type: object
@@ -896,9 +828,8 @@ components:
             payment:
               $ref: '#/components/schemas/Payment'
     PaymentFailed:
-      description: >
-        An event of unsuccessful completion of payment with a reason, e.g. in
-        case of if the payer does not have sufficient funds available
+      description: |
+        An event of unsuccessful completion of payment with a reason, e.g. in case of if the payer does not have sufficient funds available
       allOf:
         - $ref: '#/components/schemas/Event'
         - type: object
@@ -949,10 +880,8 @@ components:
             - succeeded
             - failed
         error:
-          description: >
-            Description of the error that occurred during the refund process, if
-            the
-
+          description: |
+            Description of the error that occurred during the refund process, if the
             refund was unsuccessful
           type: object
           required:
@@ -964,16 +893,14 @@ components:
             message:
               type: string
         amount:
-          description: >
-            Refund amount in minor monetary units, e.g. cents if U.S. dollars
-            are specified as the currency
+          description: |
+            Refund amount in minor monetary units, e.g. cents if U.S. dollars are specified as the currency
           type: integer
           format: int64
           minimum: 1
         currency:
-          description: >
-            Currency character code according to [ISO
-            4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+          description: |
+            Currency character code according to [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
           type: string
         reason:
           description: Refund reason

@@ -1,15 +1,15 @@
 {
   "name": "swag-webhook-events",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "private": true,
   "dependencies": {
-    "@redocly/openapi-cli": "1.0.0-beta.94",
+    "@redocly/cli": "^1.34.3",
     "json-merge-patch": "1.0.2",
-    "redoc-cli": "0.13.21"
+    "redoc-cli": "^0.8.5"
   },
   "scripts": {
-    "start": "openapi preview-docs",
-    "build": "openapi bundle -o web_deploy/openapi.yaml && openapi bundle -o web_deploy/openapi.json",
-    "validate": "openapi lint"
+    "start": "redocly preview-docs",
+    "build": "redocly bundle openapi/openapi.yaml -o web_deploy/openapi.yaml && redocly bundle openapi/openapi.yaml -o web_deploy/openapi.json",
+    "validate": "redocly lint"
   }
 }

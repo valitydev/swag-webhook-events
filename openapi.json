@@ -34,9 +34,9 @@
         ],
         "summary": "Notify of an event",
         "operationId": "notifyWebhookEvent",
-        "parameters": [
+        "security": [
           {
-            "$ref": "#/components/parameters/signature"
+            "signature": []
           }
         ],
         "requestBody": {
@@ -62,15 +62,12 @@
     }
   },
   "components": {
-    "parameters": {
+    "securitySchemes": {
       "signature": {
+        "description": "Message signature formed according to the above rules.\n",
         "name": "Content-Signature",
-        "in": "header",
-        "description": "Message signature formed according to the above rules\n",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
+        "type": "apiKey",
+        "in": "header"
       }
     },
     "schemas": {
