@@ -32,10 +32,10 @@ jobs:
         run: npm install
 
       - name: Bundle spec and build docsite
-        run: npm run build --
+        run: npm run build
 
       - name: Prepare release artifacts
-        run: mkdir -p out && cp web_deploy/openapi.{yaml,json} package.json package-lock.json out/
+        run: mkdir -p out && cp dist/openapi.{yaml,json} package.json package-lock.json out/
 
       - name: Deploy artifacts to release branch
         uses: JamesIves/github-pages-deploy-action@v4.4.3
