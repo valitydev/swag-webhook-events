@@ -1,0 +1,11 @@
+required:
+  - digitalWalletDetailsType
+properties:
+  digitalWalletDetailsType:
+    type: string
+    enum:
+      - DigitalWalletDetailsQIWI
+discriminator:
+  propertyName: digitalWalletDetailsType
+  mapping:
+    "DigitalWalletDetailsQIWI": "../schemas/DigitalWalletDetailsQIWI.yaml"

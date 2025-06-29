@@ -1,0 +1,15 @@
+type: object
+description: Recurring payment tool based on another payment
+allOf:
+  - 
+    $ref: "../schemas/Payer.yaml"
+  - 
+    type: object
+    required:
+      - contactInfo
+      - recurrentParentPayment
+    properties:
+      contactInfo:
+        $ref: "../schemas/ContactInfo.yaml"
+      recurrentParentPayment:
+        $ref: "../schemas/PaymentRecurrentParent.yaml"

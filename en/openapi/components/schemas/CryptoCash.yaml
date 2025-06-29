@@ -1,0 +1,10 @@
+description: Crypto cash
+type: object
+required:
+  - cryptoAmount
+  - cryptoCurrency
+properties:
+  cryptoAmount:
+    $ref: "../schemas/Rational.yaml"
+  cryptoCurrency:
+    $ref: "../schemas/CryptoCurrency.yaml"
