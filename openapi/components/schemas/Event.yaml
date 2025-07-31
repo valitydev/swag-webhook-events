@@ -18,7 +18,6 @@ properties:
     type: string
     enum:
       - InvoicesTopic
-      - CustomersTopic
   eventType:
     type: string
     description: Type of event that occurred
@@ -39,12 +38,6 @@ properties:
       - RefundPending
       - RefundSucceeded
       - RefundFailed
-      - CustomerCreated
-      - CustomerDeleted
-      - CustomerReady
-      - CustomerBindingStarted
-      - CustomerBindingSucceeded
-      - CustomerBindingFailed
       - PaymentInteractionRequested
       - PaymentInteractionCompleted
 discriminator:
@@ -66,11 +59,5 @@ discriminator:
     "RefundPending": "../schemas/RefundPending.yaml"
     "RefundSucceeded": "../schemas/RefundSucceeded.yaml"
     "RefundFailed": "../schemas/RefundFailed.yaml"
-    "CustomerCreated": "../schemas/CustomerCreated.yaml"
-    "CustomerDeleted": "../schemas/CustomerDeleted.yaml"
-    "CustomerReady": "../schemas/CustomerReady.yaml"
-    "CustomerBindingStarted": "../schemas/CustomerBindingStarted.yaml"
-    "CustomerBindingSucceeded": "../schemas/CustomerBindingSucceeded.yaml"
-    "CustomerBindingFailed": "../schemas/CustomerBindingFailed.yaml"
     "PaymentInteractionRequested": "../schemas/PaymentInteractionRequested.yaml"
     "PaymentInteractionCompleted": "../schemas/PaymentInteractionCompleted.yaml"

@@ -7,10 +7,10 @@
     <parent>
         <groupId>dev.vality</groupId>
         <artifactId>library-parent-pom</artifactId>
-        <version>3.0.1</version>
+        <version>3.0.4</version>
     </parent>
 
-    <artifactId>swag-webhook-events</artifactId>
+    <artifactId>${artifact.name}</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
 
@@ -20,6 +20,7 @@
 
     <properties>
         <default.package>dev.vality.swag_webhook_events</default.package>
+        <artifact.name>swag-webhook-events</artifact.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <revision>SNAPSHOT</revision>
         <maven-plugin-version>1.0.0</maven-plugin-version>
@@ -127,6 +128,9 @@
     <profiles>
         <profile>
             <id>server</id>
+            <properties>
+                <artifact.name>swag-webhook-events-server</artifact.name>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -167,6 +171,9 @@
         </profile>
         <profile>
             <id>client</id>
+            <properties>
+                <artifact.name>swag-webhook-events-client</artifact.name>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
