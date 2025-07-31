@@ -100,7 +100,6 @@ components:
           type: string
           enum:
             - InvoicesTopic
-            - CustomersTopic
         eventType:
           type: string
           description: Type of event that occurred
@@ -121,12 +120,6 @@ components:
             - RefundPending
             - RefundSucceeded
             - RefundFailed
-            - CustomerCreated
-            - CustomerDeleted
-            - CustomerReady
-            - CustomerBindingStarted
-            - CustomerBindingSucceeded
-            - CustomerBindingFailed
             - PaymentInteractionRequested
             - PaymentInteractionCompleted
       discriminator:
@@ -148,12 +141,6 @@ components:
           RefundPending: '#/components/schemas/RefundPending'
           RefundSucceeded: '#/components/schemas/RefundSucceeded'
           RefundFailed: '#/components/schemas/RefundFailed'
-          CustomerCreated: '#/components/schemas/CustomerCreated'
-          CustomerDeleted: '#/components/schemas/CustomerDeleted'
-          CustomerReady: '#/components/schemas/CustomerReady'
-          CustomerBindingStarted: '#/components/schemas/CustomerBindingStarted'
-          CustomerBindingSucceeded: '#/components/schemas/CustomerBindingSucceeded'
-          CustomerBindingFailed: '#/components/schemas/CustomerBindingFailed'
           PaymentInteractionRequested: '#/components/schemas/PaymentInteractionRequested'
           PaymentInteractionCompleted: '#/components/schemas/PaymentInteractionCompleted'
     InvoiceCartLine:
@@ -358,26 +345,13 @@ components:
           description: Payment tool type
           type: string
           enum:
-            - CustomerPayer
             - PaymentResourcePayer
             - RecurrentPayer
       discriminator:
         propertyName: payerType
         mapping:
-          CustomerPayer: '#/components/schemas/CustomerPayer'
           PaymentResourcePayer: '#/components/schemas/PaymentResourcePayer'
           RecurrentPayer: '#/components/schemas/RecurrentPayer'
-    CustomerPayer:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/Payer'
-        - type: object
-          required:
-            - customerID
-          properties:
-            customerID:
-              description: Customer ID
-              type: string
     PaymentToolDetails:
       type: object
       description: Payment tool details
@@ -973,143 +947,6 @@ components:
               $ref: '#/components/schemas/Payment'
             refund:
               $ref: '#/components/schemas/Refund'
-    Customer:
-      description: Customer details
-      type: object
-      required:
-        - id
-        - shopID
-        - status
-        - contactInfo
-        - metadata
-      properties:
-        id:
-          description: Customer ID
-          type: string
-        shopID:
-          description: Shop ID
-          type: string
-        status:
-          description: Customer status
-          type: string
-          enum:
-            - ready
-            - unready
-        contactInfo:
-          $ref: '#/components/schemas/ContactInfo'
-        metadata:
-          description: Customer metadata
-          type: object
-    CustomerCreated:
-      description: Customer creation event
-      allOf:
-        - $ref: '#/components/schemas/Event'
-        - type: object
-          required:
-            - customer
-          properties:
-            customer:
-              $ref: '#/components/schemas/Customer'
-    CustomerDeleted:
-      description: Customer deletion event
-      allOf:
-        - $ref: '#/components/schemas/Event'
-        - type: object
-          required:
-            - customer
-          properties:
-            customer:
-              $ref: '#/components/schemas/Customer'
-    CustomerReady:
-      description: Event on the occurrence of the customer's readiness to make payment
-      allOf:
-        - $ref: '#/components/schemas/Event'
-        - type: object
-          required:
-            - customer
-          properties:
-            customer:
-              $ref: '#/components/schemas/Customer'
-    CustomerBindingError:
-      description: Description of the error that occurred during the binding process
-      type: object
-      required:
-        - code
-        - message
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-    CustomerBindingStatus:
-      description: Status of binding the customer to the payment tool
-      type: object
-      required:
-        - status
-      properties:
-        status:
-          description: Binding status
-          type: string
-          enum:
-            - pending
-            - succeeded
-            - failed
-        error:
-          $ref: '#/components/schemas/CustomerBindingError'
-    CustomerBinding:
-      description: Binding of the customer to the payment tool
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/CustomerBindingStatus'
-        - type: object
-          required:
-            - id
-            - paymentResource
-          properties:
-            id:
-              description: Customer binding identifier
-              type: string
-            paymentResource:
-              $ref: '#/components/schemas/PaymentResource'
-    CustomerBindingStarted:
-      description: Customer binding creation event
-      allOf:
-        - $ref: '#/components/schemas/Event'
-        - type: object
-          required:
-            - customer
-            - binding
-          properties:
-            customer:
-              $ref: '#/components/schemas/Customer'
-            binding:
-              $ref: '#/components/schemas/CustomerBinding'
-    CustomerBindingSucceeded:
-      description: Event about successful binding of the customer to the payment tool
-      allOf:
-        - $ref: '#/components/schemas/Event'
-        - type: object
-          required:
-            - customer
-            - binding
-          properties:
-            customer:
-              $ref: '#/components/schemas/Customer'
-            binding:
-              $ref: '#/components/schemas/CustomerBinding'
-    CustomerBindingFailed:
-      description: Event about unsuccessful binding of the customer to the payment tool
-      allOf:
-        - $ref: '#/components/schemas/Event'
-        - type: object
-          required:
-            - customer
-            - binding
-          properties:
-            customer:
-              $ref: '#/components/schemas/Customer'
-            binding:
-              $ref: '#/components/schemas/CustomerBinding'
     UserInteractionDetails:
       type: object
       required:
