@@ -1,0 +1,15 @@
+description: |
+  Event about change of payment amount on the provider's side
+allOf:
+  - 
+    $ref: '../schemas/Event.yaml'
+  - 
+    type: object
+    required:
+      - invoice
+      - payment
+    properties:
+      invoice:
+        $ref: '../schemas/Invoice.yaml'
+      payment:
+        $ref: '../schemas/Payment.yaml'

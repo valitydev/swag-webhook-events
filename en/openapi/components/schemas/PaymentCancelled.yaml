@@ -1,0 +1,15 @@
+description: >
+  Payment cancelation event, as a result of which the charge of funds from the payer is canceled
+allOf:
+  - 
+    $ref: "../schemas/Event.yaml"
+  - 
+    type: object
+    required:
+      - invoice
+      - payment
+    properties:
+      invoice:
+        $ref: "../schemas/Invoice.yaml"
+      payment:
+        $ref: "../schemas/Payment.yaml"

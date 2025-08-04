@@ -1,0 +1,49 @@
+required:
+  - bin
+  - lastDigits
+  - cardNumberMask
+  - paymentSystem
+properties:
+  bin:
+    description: Card issuing bank BIN
+    type: string
+    pattern: '^\d{6,8}$'
+  lastDigits:
+    description: Card last digits
+    type: string
+    pattern: '^\d{2,4}$'
+  cardNumberMask:
+    description: Masked card number
+    type: string
+    pattern: '^\d{6,8}\*+\d{2,4}$'
+  paymentSystem:
+    description: Payment system
+    type: string
+    maxLength: 100
+  tokenProvider:
+    description: Payment token provider
+    type: string
+    enum:
+      - applepay
+      - googlepay
+      - samsungpay
+      - yandexpay
+      - unknown
+    deprecated: true
+  tokenProviderName:
+    description: Payment token provider
+    type: string
+  issuerCountry:
+    description: Issuing country (alpha-3 code according to ISO_3166-1)
+    type: string
+    example:
+      - "RUS"
+      - "POL"
+      - "USA"
+  bankName:
+    description: Bank name
+    type: string
+    example:
+      - "SBERBANK OF RUSSIA"
+      - "JOINT STOCK COMPANY ALFA-BANK"
+      - "VTB BANK OJSC"

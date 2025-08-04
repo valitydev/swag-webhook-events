@@ -1,0 +1,9 @@
+description: Qr code display request
+type: object
+required:
+  - qrCode
+properties:
+  qrCode:
+    description: Type of http request
+    type: string
+    format: binary

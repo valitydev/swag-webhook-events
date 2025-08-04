@@ -1,0 +1,11 @@
+description: Event on the occurrence of the customer's readiness to make payment
+allOf:
+  - 
+    $ref: "../schemas/Event.yaml"
+  - 
+    type: object
+    required:
+      - customer
+    properties:
+      customer:
+        $ref: "../schemas/Customer.yaml"

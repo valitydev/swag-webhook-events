@@ -1,0 +1,14 @@
+description: Successful payment refund event
+allOf:
+  - 
+    $ref: "../schemas/Event.yaml"
+  - 
+    type: object
+    required:
+      - invoice
+      - payment
+    properties:
+      invoice:
+        $ref: "../schemas/Invoice.yaml"
+      payment:
+        $ref: "../schemas/Payment.yaml"

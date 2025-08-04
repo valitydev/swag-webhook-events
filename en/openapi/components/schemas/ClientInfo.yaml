@@ -1,0 +1,14 @@
+description: Payer's client device data
+type: object
+required:
+  - fingerprint
+properties:
+  ip:
+    description: Payer IP-address
+    type: string
+    format: ip-address
+    maxLength: 45
+  fingerprint:
+    description: Payer's user agent unique fingerprint
+    type: string
+    maxLength: 1000

@@ -1,0 +1,17 @@
+type: object
+required:
+  - payerType
+properties:
+  payerType:
+    description: Payment tool type
+    type: string
+    enum:
+      - CustomerPayer
+      - PaymentResourcePayer
+      - RecurrentPayer
+discriminator:
+  propertyName: payerType
+  mapping:
+    "CustomerPayer": "../schemas/CustomerPayer.yaml"
+    "PaymentResourcePayer": "../schemas/PaymentResourcePayer.yaml"
+    "RecurrentPayer": "../schemas/RecurrentPayer.yaml"

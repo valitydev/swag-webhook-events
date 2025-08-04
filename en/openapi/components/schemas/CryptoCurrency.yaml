@@ -1,0 +1,11 @@
+description: Cryptocurrency type
+type: string
+enum:
+  - bitcoin
+  - litecoin
+  - bitcoinCash
+  - ripple
+  - ethereum
+  - zcash
+  - unknown
+deprecated: true

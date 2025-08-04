@@ -1,0 +1,14 @@
+description: Customer binding creation event
+allOf:
+  - 
+    $ref: "../schemas/Event.yaml"
+  - 
+    type: object
+    required:
+      - customer
+      - binding
+    properties:
+      customer:
+        $ref: "../schemas/Customer.yaml"
+      binding:
+        $ref: "../schemas/CustomerBinding.yaml"
